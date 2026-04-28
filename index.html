@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Website</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Font-boostraap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+
+    <!-- Style css -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="bg-white">
+      <div class="d-none d-lg-block">
+        <div class="container-fluid py-3 px-4">
+          <!-- Header top -->
+          <div class="row align-items-center justify-content-between">
+            <!-- Logo thương hiệu -->
+            <div class="col-lg-2">
+              <a href="#" class="text-decoration-none">
+                <img src="./assets/image/logo.png" alt="ĐH Công Thương" class="img-fluid logo-img" />
+              </a>
+            </div>
+
+            <!-- Search -->
+            <div class="col-lg-6">
+              <form class="d-flex w-100 border rounded-pill p-1">
+                <input type="search" name="Search" placeholder="Tìm kiếm..." aria-label="Search" class="form-control border-0 rounded-start-pill shadow-none px-3" />
+                <button class="btn rounded-pill px-4" style="background-color: #ffe6d5; color: #f57224" type="submit">
+                  <i class="bi bi-search"></i>
+                </button>
+              </form>
+            </div>
+
+            <!-- Khu vực người dùng -->
+            <div class="col-lg-4 d-flex justify-content-evenly align-items-center gap-3">
+              <!-- Giỏ hàng -->
+              <a href="#" class="text-decoration-none text-dark d-flex align-items-center gap-2">
+                <div class="position-relative bg-light rounded-circle d-flex align-items-center justify-content-center header-action-icon">
+                  <i class="bi bi-cart2 fs-5"></i>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #f57224">0</span>
+                </div>
+                <span class="fw-medium" style="font-size: 15px">Giỏ hàng của tôi</span>
+              </a>
+
+              <!-- Yêu thích -->
+              <a href="#" class="text-decoration-none text-dark d-flex align-items-center gap-2">
+                <div class="position-relative bg-light rounded-circle d-flex align-items-center justify-content-center header-action-icon">
+                  <i class="bi bi-heart fs-5"></i>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #f57224">0</span>
+                </div>
+                <span class="fw-medium" style="font-size: 15px">Yêu thích</span>
+              </a>
+
+              <!-- Khách hàng -->
+              <a href="#" class="text-decoration-none text-dark d-flex align-items-center gap-2">
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center header-action-icon">
+                  <i class="bi bi-person fs-5"></i>
+                </div>
+                <span class="fw-medium" style="font-size: 15px">Guest</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Header buttom -->
+        <nav class="bg-dark w-100">
+          <div class="container">
+            <ul class="nav justify-content-center py-2 gap-5">
+              <li class="nav-item"><a class="nav-link text-white px-0" href="#">Điện thoại</a></li>
+              <li class="nav-item"><a class="nav-link text-white px-0" href="#">Máy tính bảng</a></li>
+              <li class="nav-item"><a class="nav-link text-white px-0" href="#">Laptop</a></li>
+              <li class="nav-item"><a class="nav-link text-white px-0" href="#">Phụ kiện</a></li>
+              <li class="nav-item"><a class="nav-link text-white px-0" href="#">Liên hệ</a></li>
+              <li class="nav-item"><a class="nav-link text-white px-0" href="#">Khuyến Mãi</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Thanh header của mobile -->
+      <div class="d-lg-none d-flex justify-content-between align-items-center px-3 py-2 w-100">
+        <!-- Icon thu nhỏ giao diện -->
+        <button class="btn border-0 p-0 fs-1 text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <!-- Logo thương hiệu -->
+        <a href="#">
+          <img src="./assets/image/logo.png" alt="ĐH Công Thương" height="50" />
+        </a>
+
+        <!-- Giỏ hàng -->
+        <a href="#" class="text-dark position-relative mt-2 me-2">
+          <i class="bi bi-cart2 fs-3"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #f57224; font-size: 0.65rem">0</span>
+        </a>
+      </div>
+
+      <!-- Nội dung menu sẽ hiển thị khi nhấn vào icon -->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <!-- Logo menu trượt -->
+        <div class="offcanvas-header border-bottom">
+          <img src="./assets/image/logo.png" alt="ĐH Công Thương" height="50" />
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <!-- Phần danh sách sự kiện có thể thao tác -->
+        <div class="offcanvas-body d-flex flex-column p-0">
+          <ul class="nav flex-column fs-6">
+            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">ĐIỆN THOẠI</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">MÁY TÍNH BẢNG</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">LAPTOP</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">PHỤ KIỆN</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">LIÊN HỆ</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">KHUYẾN MÃI</a></li>
+          </ul>
+
+          <!-- Mục giỏ hàng và yêu thích -->
+          <div class="mt-2 px-4">
+            <a href="#" class="nav-link text-dark py-3 d-flex align-items-center gap-2 fw-medium"> <i class="bi bi-cart2 fs-5"></i> GIỎ HÀNG CỦA TÔI (0) </a>
+            <a href="#" class="nav-link text-dark py-2 d-flex align-items-center gap-2 fw-medium"> <i class="bi bi-heart fs-5"></i> YÊU THÍCH (0) </a>
+          </div>
+
+          <!--Đăng nhập-->
+          <div class="mt-auto p-4 border-top bg-light">
+            <button class="btn btn-dark w-100 py-2 d-flex align-items-center justify-content-center gap-2 rounded-3"><i class="bi bi-box-arrow-in-right"></i> Đăng nhập</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <!-- Section-one -->
+      <section class="section-one">
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+          </div>
+
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./assets/image/banner.jpg" alt="Ảnh" class="d-block w-100" />
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/image/banner.jpg" alt="ảnh" class="d-block w-100" />
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/image/banner.jpg" alt="Ảnh" class="d-block w-100" />
+            </div>
+          </div>
+
+          <!-- Left and right controls/icons -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
