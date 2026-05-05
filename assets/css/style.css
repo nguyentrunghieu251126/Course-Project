@@ -391,8 +391,6 @@ header nav .nav-link:hover::after {
   }
 }
 
-/* adasdsadasd */
-
 .stats-grid .stat-card {
   height: 100%;
 }
@@ -525,7 +523,6 @@ header nav .nav-link:hover::after {
   background: var(--brand-blue-soft);
   color: var(--brand-blue);
 }
-/* adasdsadasd */
 
 .category-strip {
   position: relative;
@@ -741,9 +738,6 @@ header nav .nav-link:hover::after {
   }
 }
 
-/* ==================================================
-  HERO RESPONSIVE FIX
-================================================== */
 @media (max-width: 991.98px) {
   .hero-visual {
     display: grid;
