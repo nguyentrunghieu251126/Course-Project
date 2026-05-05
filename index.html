@@ -31,55 +31,56 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+    <!-- Thanh thanh báo đầu trang -->
+    <div class="promo-bar py-2">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-2 text-center text-lg-start">
+          <p class="mb-0">Tuần lễ công nghệ mới: miễn phí giao nhanh nội thành và hỗ trợ trả góp 0%.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3 promo-points">
+            <span><i class="bi bi-lightning-charge-fill"></i> Flash deal mỗi ngày</span>
+            <span><i class="bi bi-shield-check"></i> Bảo hành minh bạch</span>
+            <span><i class="bi bi-headset"></i> Hỗ trợ 24/7</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Header -->
     <header class="bg-white sticky-top shadow-sm">
-      <div class="d-none d-lg-block">
-        <div class="container-fluid py-3 px-4">
-          <!-- Header user-->
-          <div class="row align-items-center justify-content-between">
-            <!-- Logo thương hiệu -->
-            <div class="col-lg-2">
-              <a href="#" class="text-decoration-none">
-                <img src="./assets/image/logo.png" alt="ĐH Công Thương" class="img-fluid logo-img" />
-              </a>
-            </div>
+      <div class="d-none d-xl-block shadow-sm">
+        <div class="row align-items-center justify-content-between">
+          <!-- Logo thương hiệu -->
+          <div class="col-lg-2">
+            <a href="#" class="text-decoration-none">
+              <img src="./assets/image/logo.png" alt="ĐH Công Thương" class="img-fluid logo-img" />
+            </a>
+          </div>
 
-            <!-- Search -->
-            <div class="col-lg-6">
-              <form class="d-flex w-100 border rounded-pill p-1">
-                <input type="search" name="Search" placeholder="Tìm kiếm..." aria-label="Search" class="form-control border-0 rounded-start-pill shadow-none px-3" />
-                <button class="btn rounded-pill px-4 root-bg-text-two" type="submit">
-                  <i class="bi bi-search"></i>
-                </button>
-              </form>
-            </div>
+          <!-- Tra cứu search -->
+          <div class="col-lg-7">
+            <form class="search-form d-none d-xl-flex" role="search">
+              <i class="bi bi-search"></i>
+              <input type="search" class="form-control" placeholder="Tìm điện thoại..." />
+              <button class="btn btn-accent" type="submit">Tìm</button>
+            </form>
+          </div>
 
-            <!-- Khu vực người dùng -->
-            <div class="col-lg-4 d-flex justify-content-evenly align-items-center gap-3">
-              <!-- Giỏ hàng -->
-              <a href="#" class="text-decoration-none text-dark d-flex align-items-center gap-2">
-                <div class="position-relative bg-light rounded-circle d-flex align-items-center justify-content-center header-action-icon">
-                  <i class="bi bi-cart2 fs-5"></i>
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill root-bg-text-one">0</span>
-                </div>
-                <span class="fw-medium" style="font-size: 15px">Giỏ hàng của tôi</span>
-              </a>
+          <!-- Khu vực người dùng -->
+          <div class="col-lg-3">
+            <div class="header-actions d-flex justify-content-evenly align-items-center gap-3">
+              <button class="action-button position-relative" type="button">
+                <i class="bi bi-heart fs-5"></i>
+                <span class="action-badge">0</span>
+              </button>
 
-              <!-- Yêu thích -->
-              <a href="#" class="text-decoration-none text-dark d-flex align-items-center gap-2">
-                <div class="position-relative bg-light rounded-circle d-flex align-items-center justify-content-center header-action-icon">
-                  <i class="bi bi-heart fs-5"></i>
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill root-bg-text-one">0</span>
-                </div>
-                <span class="fw-medium" style="font-size: 15px">Yêu thích</span>
-              </a>
+              <button class="action-button position-relative" type="button">
+                <i class="bi bi-cart2 fs-5"></i>
+                <span class="action-badge">0</span>
+              </button>
 
-              <!-- Khách hàng -->
-              <a href="#" class="text-decoration-none text-dark d-flex align-items-center gap-2">
-                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center header-action-icon">
-                  <i class="bi bi-person fs-5"></i>
-                </div>
-                <span class="fw-medium" style="font-size: 15px">Guest</span>
+              <a class="account-chip d-none d-md-inline-flex align-items-center" href="#">
+                <i class="bi bi-person-circle fs-4 me-2"></i>
+                <span>Đăng Nhập</span>
               </a>
             </div>
           </div>
@@ -89,45 +90,44 @@
         <nav class="bg-dark w-100">
           <div class="container">
             <ul class="nav justify-content-center py-2 gap-5">
-              <li class="nav-item"><a class="nav-link text-white px-0" href="#">Điện thoại</a></li>
-              <li class="nav-item"><a class="nav-link text-white px-0" href="#">Máy tính bảng</a></li>
-              <li class="nav-item"><a class="nav-link text-white px-0" href="#">Laptop</a></li>
-              <li class="nav-item"><a class="nav-link text-white px-0" href="#">Phụ kiện</a></li>
-              <li class="nav-item"><a class="nav-link text-white px-0" href="#">Liên hệ</a></li>
-              <li class="nav-item"><a class="nav-link text-white px-0" href="#">Khuyến Mãi</a></li>
+              <li class="nav-item"><a class="nav-link fs-5 text-white px-0" href="#">Điện thoại</a></li>
+              <li class="nav-item"><a class="nav-link fs-5 text-white px-0" href="#">Máy tính bảng</a></li>
+              <li class="nav-item"><a class="nav-link fs-5 text-white px-0" href="#">Laptop</a></li>
+              <li class="nav-item"><a class="nav-link fs-5 text-white px-0" href="#">Phụ kiện</a></li>
+              <li class="nav-item"><a class="nav-link fs-5 text-white px-0" href="#">Liên hệ</a></li>
+              <li class="nav-item"><a class="nav-link fs-5 text-white px-0" href="#">Khuyến Mãi</a></li>
             </ul>
           </div>
         </nav>
       </div>
 
-      <!-- Thanh header của mobile -->
-      <div class="d-lg-none d-flex justify-content-between align-items-center px-3 py-2 w-100">
-        <!-- Icon thu nhỏ giao diện -->
+      <!-- Thanh header của mobile -->
+      <div class="d-xl-none d-flex justify-content-between align-items-center px-3 py-2 w-100">
+        <!-- Icon thu nhỏ giao diện -->
         <button class="btn border-0 p-0 fs-1 text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
           <i class="bi bi-list"></i>
         </button>
 
-        <!-- Logo thương hiệu -->
+        <!-- Logo thương hiệu -->
         <a href="#">
           <img src="./assets/image/logo.png" alt="ĐH Công Thương" height="50" />
         </a>
 
-        <!-- Giỏ hàng -->
-        <a href="#" class="text-dark position-relative mt-2 me-2">
-          <i class="bi bi-cart2 fs-3"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill root-bg-text-one fs-065">0</span>
-        </a>
+        <!-- Giỏ hàng -->
+        <button class="action-button position-relative" type="button">
+          <i class="bi bi-cart2 fs-5"></i>
+          <span class="action-badge">0</span>
+        </button>
       </div>
 
-      <!-- Nội dung menu sẽ hiển thị khi nhấn vào icon -->
+      <!-- Nội dung menu sẽ hiển thị khi nhấn vào icon -->
       <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-        <!-- Logo menu trượt -->
         <div class="offcanvas-header border-bottom">
           <img src="./assets/image/logo.png" alt="ĐH Công Thương" height="50" />
           <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
-        <!-- Phần danh sách sự kiện có thể thao tác -->
+        <!-- Phần danh sách sự kiện có thể thao tác -->
         <div class="offcanvas-body d-flex flex-column p-0">
           <ul class="nav flex-column fs-6">
             <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">ĐIỆN THOẠI</a></li>
@@ -138,13 +138,13 @@
             <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">KHUYẾN MÃI</a></li>
           </ul>
 
-          <!-- Mục giỏ hàng và yêu thích -->
+          <!-- Mục giỏ hàng và yêu thích -->
           <div class="mt-2 px-4">
             <a href="#" class="nav-link text-dark py-3 d-flex align-items-center gap-2 fw-medium"> <i class="bi bi-cart2 fs-5"></i> GIỎ HÀNG CỦA TÔI (0) </a>
             <a href="#" class="nav-link text-dark py-2 d-flex align-items-center gap-2 fw-medium"> <i class="bi bi-heart fs-5"></i> YÊU THÍCH (0) </a>
           </div>
 
-          <!--Đăng nhập-->
+          <!--Đăng nhập-->
           <div class="mt-auto p-4 border-top bg-light">
             <button class="btn btn-dark w-100 py-2 d-flex align-items-center justify-content-center gap-2 rounded-3"><i class="bi bi-box-arrow-in-right"></i> Đăng nhập</button>
           </div>
@@ -152,179 +152,108 @@
       </div>
     </header>
 
-    <!-- Banner -->
-    <section class="banner">
-      <div id="carousel-banner" class="carousel slide" data-bs-ride="carousel">
-        <!-- Indicators -->
-        <div class="carousel-indicators mb-1">
-          <button type="button" data-bs-target="#carousel-banner" data-bs-slide-to="0" class="active rounded-circle custom-dot"></button>
-          <button type="button" data-bs-target="#carousel-banner" data-bs-slide-to="1" class="rounded-circle custom-dot"></button>
-          <button type="button" data-bs-target="#carousel-banner" data-bs-slide-to="2" class="rounded-circle custom-dot"></button>
-        </div>
-
-        <!-- The slideshow/carousel -->
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./assets/image/banner.jpg" alt="Ảnh" class="d-block w-100" />
-          </div>
-          <div class="carousel-item">
-            <img src="./assets/image/banner.jpg" alt="ảnh" class="d-block w-100" />
-          </div>
-          <div class="carousel-item">
-            <img src="./assets/image/banner.jpg" alt="Ảnh" class="d-block w-100" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Main -->
     <main>
-      <!-- Section-one -->
-      <section class="section-one py-5">
+      <!-- Phần giới thiệu đầu trang -->
+      <section class="hero-section" id="home">
         <div class="container">
-          <!-- Tiêu đề sản phẩm -->
-          <div class="d-flex justify-content-between align-items-center flex-wrap mb-4 gap-2">
-            <h3 class="fw-bold mb-0 text-dark fs-5 fs-md-3">SẢN PHẨM HOT NHẤT</h3>
-            <a href="#" class="text-decoration-none fw-medium d-flex align-items-center gap-1 text-dark text-nowrap"> Xem tất cả <i class="bi bi-chevron-right fs-6"></i> </a>
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6" data-reveal>
+              <span class="eyebrow">
+                <i class="bi bi-stars"></i>
+                Sống nhanh hơn cùng công nghệ tinh gọn
+              </span>
+              <h1 class="hero-title">Không chỉ bán thiết bị, THT - Tech thiết kế trọn trải nghiệm mua sắm công nghệ</h1>
+              <p class="hero-text">Từ điện thoại, tablet tới workstation và phụ kiện thông minh, mọi sản phẩm đều được tuyển chọn để cân bằng giữa hiệu năng, thẩm mỹ và độ bền sử dụng lâu dài</p>
+              <div class="hero-actions">
+                <a href="#featured" class="btn btn-accent btn-lg d-inline-flex justify-content-center align-items-center">Khám phá ngay</a>
+                <a href="#flash-deal" class="btn btn-outline-dark btn-lg d-inline-flex justify-content-center align-items-center">Xem ưu đãi</a>
+              </div>
+
+              <div class="row g-3 stats-grid">
+                <div class="col-sm-4">
+                  <div class="stat-card">
+                    <strong data-counter="1200">0</strong>
+                    <span>đơn giao mỗi tuần</span>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="stat-card">
+                    <strong data-counter="96">0</strong>
+                    <span>khách quay lại mua</span>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="stat-card">
+                    <strong data-counter="24">0</strong>
+                    <span>giờ hỗ trợ liên tục</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-reveal>
+              <div class="hero-visual">
+                <div class="hero-carousel hero-banner-single">
+                  <img src="https://images.unsplash.com/photo-1758914223873-9a952f4e3227?auto=format&fit=crop&w=1400&q=80" class="d-block w-100" alt="Điện thoại trưng bày trong showroom công nghệ" />
+
+                  <div class="hero-slide-content hero-slide-content-safe">
+                    <span>Premium pick</span>
+                    <h2>Flagship mới cho người cần mọi thứ thật mượt</h2>
+                  </div>
+                </div>
+
+                <div class="floating-card floating-card-dark">
+                  <div class="floating-icon"><i class="bi bi-truck"></i></div>
+                  <div>
+                    <strong>Giao hỏa tốc</strong>
+                    <p class="mb-0">Nội thành từ 2 giờ</p>
+                  </div>
+                </div>
+
+                <div class="floating-card floating-card-light">
+                  <div class="floating-icon"><i class="bi bi-shield-check"></i></div>
+                  <div>
+                    <strong>THT - Tech</strong>
+                    <p class="mb-0">1 đổi 1 trong 30 ngày</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <!-- Sản phẩm -->
-          <div class="d-flex flex-nowrap overflow-x-auto pb-3 gap-3 drag-scroll">
-            <!-- Sản phẩm 1 -->
-            <div class="flex-shrink-0 product-item">
-              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
-                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
-                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
-                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
-                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
-                  <div class="d-flex gap-2 mt-auto">
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-three d-flex align-items-center justify-content-center" title="Thêm vào giỏ hàng">
-                      <i class="bi bi-cart-plus fs-6"></i>
-                    </button>
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sản phẩm 2 -->
-            <div class="flex-shrink-0 product-item">
-              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
-                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
-                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
-                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
-                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
-                  <div class="d-flex gap-2 mt-auto">
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-three d-flex align-items-center justify-content-center" title="Thêm vào giỏ hàng">
-                      <i class="bi bi-cart-plus fs-6"></i>
-                    </button>
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sản phẩm 3 -->
-            <div class="flex-shrink-0 product-item">
-              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
-                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
-                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
-                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
-                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
-                  <div class="d-flex gap-2 mt-auto">
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-three d-flex align-items-center justify-content-center" title="Thêm vào giỏ hàng">
-                      <i class="bi bi-cart-plus fs-6"></i>
-                    </button>
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sản phẩm 4 -->
-            <div class="flex-shrink-0 product-item">
-              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
-                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
-                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
-                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
-                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
-                  <div class="d-flex gap-2 mt-auto">
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-three d-flex align-items-center justify-content-center" title="Thêm vào giỏ hàng">
-                      <i class="bi bi-cart-plus fs-6"></i>
-                    </button>
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sản phẩm 5 -->
-            <div class="flex-shrink-0 product-item">
-              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
-                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
-                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
-                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
-                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
-                  <div class="d-flex gap-2 mt-auto">
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-three d-flex align-items-center justify-content-center" title="Thêm vào giỏ hàng">
-                      <i class="bi bi-cart-plus fs-6"></i>
-                    </button>
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sản phẩm 6 -->
-            <div class="flex-shrink-0 product-item">
-              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
-                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
-                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
-                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
-                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
-                  <div class="d-flex gap-2 mt-auto">
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-three d-flex align-items-center justify-content-center" title="Thêm vào giỏ hàng">
-                      <i class="bi bi-cart-plus fs-6"></i>
-                    </button>
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sản phẩm 7 -->
-            <div class="flex-shrink-0 product-item">
-              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
-                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
-                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
-                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
-                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
-                  <div class="d-flex gap-2 mt-auto">
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-three d-flex align-items-center justify-content-center" title="Thêm vào giỏ hàng">
-                      <i class="bi bi-cart-plus fs-6"></i>
-                    </button>
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sản phẩm 8 -->
-            <div class="flex-shrink-0 product-item">
-              <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
-                <img src="./assets/image/điện thoại 1.png" class="card-img-top mx-auto mt-2 logo-img product-img" alt="iPhone 15 Pro" />
-                <div class="card-body text-center px-0 pb-0 d-flex flex-column">
-                  <h6 class="card-title text-dark mb-1">iPhone 15 Pro</h6>
-                  <p class="card-text text-dark fw-bold mb-3">$199.00</p>
-                  <div class="d-flex gap-2 mt-auto">
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-three d-flex align-items-center justify-content-center" title="Thêm vào giỏ hàng">
-                      <i class="bi bi-cart-plus fs-6"></i>
-                    </button>
-                    <button class="btn text-white w-50 rounded-3 px-1 py-1 root-bg-text-one fs-13px fw-500px">Mua ngay</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section class="category-strip">
+        <div class="container">
+          <div class="category-shell">
+            <a href="#featured" class="category-pill" data-filter-shortcut="phone">
+              <span class="category-icon category-icon-blue"><i class="bi bi-phone"></i></span>
+              <span>
+                <strong>Điện thoại</strong>
+                <small>Flagship, camera phone, gaming</small>
+              </span>
+            </a>
+            <a href="#featured" class="category-pill" data-filter-shortcut="tablet">
+              <span class="category-icon category-icon-orange"><i class="bi bi-tablet"></i></span>
+              <span>
+                <strong>Máy tính bảng</strong>
+                <small>Học tập, vẽ, ghi chú, giải trí</small>
+              </span>
+            </a>
+            <a href="#featured" class="category-pill" data-filter-shortcut="laptop">
+              <span class="category-icon category-icon-dark"><i class="bi bi-laptop"></i></span>
+              <span>
+                <strong>Laptop</strong>
+                <small>Ultrabook, sáng tạo nội dung, workstation</small>
+              </span>
+            </a>
+            <a href="#featured" class="category-pill" data-filter-shortcut="accessory">
+              <span class="category-icon category-icon-green"><i class="bi bi-headphones"></i></span>
+              <span>
+                <strong>Phụ kiện</strong>
+                <small>Sạc nhanh, tai nghe, hệ sinh thái gọn nhẹ</small>
+              </span>
+            </a>
           </div>
         </div>
       </section>

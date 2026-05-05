@@ -6,45 +6,77 @@
   --bg-color-three: #1a56db;
   --text-color-one: #fff;
   --text-color-two: #f57224;
+  --brand-dark: #0f172a;
+  --brand-dark-soft: #1d2841;
+  --brand-blue: #2251ff;
+  --brand-blue-soft: #e8efff;
+  --brand-orange: #ff7a18;
+  --brand-orange-soft: #fff1e7;
+  --brand-green: #10b981;
+  --surface: #ffffff;
+  --surface-muted: #f5f7fb;
+  --surface-alt: #eef3fb;
+  --text-main: #162033;
+  --text-sub: #5d6b82;
+  --border-soft: rgba(22, 32, 51, 0.1);
+  --shadow-lg: 0 30px 70px rgba(15, 23, 42, 0.14);
+  --shadow-md: 0 18px 35px rgba(15, 23, 42, 0.08);
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
 }
 
 /* Tạo thanh cuộn cho trang web */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 110px;
 }
 
 /* Cấu hình style mặc định cho toàn bộ trang web */
 body {
-  font-family: var(--font-famil);
-  line-height: 1.1;
+  font-family: var(--font-family);
+  line-height: 1.6;
+  background: radial-gradient(circle at top left, rgba(34, 81, 255, 0.1), transparent 30%), radial-gradient(circle at top right, rgba(255, 122, 24, 0.12), transparent 25%), #f4f7fb;
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 
-/* Hiển thị số lượng của badge*/
-.root-bg-text-one {
-  background-color: var(--bg-color-one);
-  color: var(--text-color-one);
+/* Cấu hình cho thẻ trèn trước và chèn sau  */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-/* Set up màu cho nút search */
-.root-bg-text-two {
-  background-color: var(--bg-color-two);
-  color: var(--text-color-two);
+/* Xóa gạch chân thẻ a */
+a {
+  text-decoration: none;
 }
 
-.root-bg-three {
-  background-color: var(--bg-color-three);
+/* Cấu hình kích thước của ảnh */
+img {
+  max-width: 100%;
+  display: block;
 }
 
-/* Font size và font weight */
-.fs-065 {
-  font-size: 0.65rem;
+/* Ghi đè lại bootstrap btn */
+.btn {
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 0.78rem 1.35rem;
 }
 
-.fs-13px {
-  font-size: 13px;
+/* Ghi đè lại bootstrap btn-outline-dark */
+.btn-outline-dark {
+  border-width: 1.5px;
 }
 
-.fw-500px {
-  font-weight: 500;
+/* Giảm khoảng cách chữ cho tiêu đề */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.03em;
 }

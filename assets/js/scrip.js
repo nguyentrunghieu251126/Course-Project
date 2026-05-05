@@ -1,87 +1,104 @@
 // Khởi tạo các chức năng
 document.addEventListener("DOMContentLoaded", () => {
-  initCarouselDrag();
-  initHorizontalScroll();
-  initCardObserver();
+  initRevealObserver();
+  initCounterObserver();
+  // initToast();
+  // initHorizontalScroll();
+  // initCountdown();
+  // initBackToTop();
+  // initFilters();
+  // initSearchForms();
+  // initActionHandlers();
+  // renderProducts();
 });
 
-// Kéo thả Banner Carousel
-function initCarouselDrag() {
-  const carouselElement = document.getElementById("carousel-banner");
-  if (!carouselElement) return;
+// Phần tạo hiệu ứng khi lướt màng hình
+let revealObserver = null;
 
-  const carousel = new bootstrap.Carousel(carouselElement);
-  const dragThreshold = 50;
+//Khởi tạo bộ theo dõi hiệu ứng xuất hiện
+function initRevealObserver() {
+  if (!("IntersectionObserver" in window)) {
+    document.querySelectorAll("[data-reveal]").forEach((element) => {
+      element.classList.add("is-visible");
+    });
+    return;
+  }
 
-  let isDragging = false;
-  let startX = 0;
+  revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
 
-  const stopDragging = () => {
-    isDragging = false;
-  };
-
-  carouselElement.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    startX = e.clientX;
-  });
-
-  carouselElement.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
-
-    const diff = startX - e.clientX;
-
-    if (Math.abs(diff) > dragThreshold) {
-      diff > 0 ? carousel.next() : carousel.prev();
-      stopDragging();
-    }
-  });
-
-  carouselElement.addEventListener("mouseup", stopDragging);
-  carouselElement.addEventListener("mouseleave", stopDragging);
-
-  carouselElement.querySelectorAll("img").forEach((img) => {
-    img.addEventListener("dragstart", (e) => e.preventDefault());
-  });
-}
-
-// Cuộn ngang mượt mà cho sản phẩm
-function initHorizontalScroll() {
-  const slider = document.querySelector(".drag-scroll");
-  if (!slider) return;
-
-  const scrollAmount = 300;
-
-  slider.addEventListener(
-    "wheel",
-    (e) => {
-      e.preventDefault();
-      slider.scrollBy({
-        left: e.deltaY > 0 ? scrollAmount : -scrollAmount,
-        behavior: "smooth",
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
       });
     },
-    { passive: false },
+    {
+      threshold: 0.18,
+      rootMargin: "0px 0px -20px 0px",
+    },
   );
+  observeRevealTargets(document);
 }
 
-// Hiệu ứng Animation khi cuộn
-function initCardObserver() {
-  const dragScrollContainer = document.querySelector(".drag-scroll");
-  const cards = document.querySelectorAll(".drag-scroll .card");
+// Theo dõi các mục tiêu cần hiệu ứng xuất hiện
+function observeRevealTargets(root) {
+  const targets = root.querySelectorAll ? root.querySelectorAll("[data-reveal]") : [];
 
-  if (!dragScrollContainer || cards.length === 0) return;
+  targets.forEach((element) => {
+    if (!revealObserver) {
+      element.classList.add("is-visible");
+      return;
+    }
+    revealObserver.observe(element);
+  });
+}
 
-  const observerOptions = {
-    root: dragScrollContainer,
-    rootMargin: "0px",
-    threshold: 0.6,
+// Khởi tạo trình theo dõi bộ đếm
+function initCounterObserver() {
+  const counters = document.querySelectorAll("[data-counter]");
+
+  if (!counters.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    counters.forEach((counter) => animateCounter(counter));
+    return;
+  }
+
+  counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.5,
+    },
+  );
+  counters.forEach((counter) => counterObserver.observe(counter));
+}
+
+// Chạy hiệu ứng đếm số
+function animateCounter(counter) {
+  const target = Number(counter.dataset.counter || 0);
+  const duration = 1400;
+  const startTime = performance.now();
+
+  const update = (currentTime) => {
+    const progress = Math.min((currentTime - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = Math.round(target * eased);
+
+    counter.textContent = value;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      counter.textContent = target;
+    }
   };
-
-  const cardObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      entry.target.classList.toggle("in-view", entry.isIntersecting);
-    });
-  }, observerOptions);
-
-  cards.forEach((card) => cardObserver.observe(card));
+  requestAnimationFrame(update);
 }
