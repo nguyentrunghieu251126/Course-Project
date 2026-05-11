@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THT TECH</title>
+
+    <link rel="stylesheet" href="./payment.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="modern-header">
+
+            <div class="modern-logo">
+
+                <img src="assets/img/logo.png" alt="logo">
+
+                <h1>THT TECH</h1>
+
+            </div>
+
+            <nav class="modern-menu">
+
+                <a href="#">Trang chủ</a>
+                <a href="#">Sản phẩm</a>
+                <a href="#">Hỗ trợ</a>
+                <a href="#">Liên hệ</a>
+
+            </nav>
+
+        </header>
+
+        <!-- CONTENT -->
+        <div class="container">
+
+            <!-- LEFT -->
+            <div class="left-box">
+
+                <h2>THÔNG TIN GIAO HÀNG</h2>
+
+                <div class="form-group">
+                    <label>Tên tên</label>
+                    <input type="text" placeholder="Nhập họ và tên">
+                </div>
+
+                <div class="form-group">
+                    <label>Địa chỉ</label>
+                    <input type="text" placeholder="123 Đường ABC, Phường XYZ">
+                </div>
+
+                <div class="form-group">
+                    <label>Phone thoại</label>
+                    <input type="text" placeholder="(084) 123 456">
+                </div>
+
+                <div class="form-group">
+                    <label>Notes</label>
+                    <textarea placeholder="..."></textarea>
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="right-box">
+
+                <h2>PHƯƠNG THỨC THANH TOÁN</h2>
+
+                <p class="choose">Choose thanh toán:</p>
+
+                <div class="payment-method active">
+                    <input type="radio" name="payment" checked>
+                    <span>💲 Tiền mặt</span>
+                </div>
+
+                <div class="payment-method">
+                    <input type="radio" name="payment">
+                    <span>💳 ATM / Banking</span>
+                </div>
+
+                <!-- TOTAL -->
+                <div class="total-box">
+
+                    <h3>TỔNG ĐƠN HÀNG</h3>
+
+                </div>
+
+                <button id="payBtn">
+                    XÁC NHẬN THANH TOÁN
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./payment.js"></script>
+
+</body>
+
+</html>
