@@ -35,53 +35,28 @@
   <div class="bg-glow glow-1"></div>
   <div class="bg-glow glow-2"></div>
 
-  <div class="container py-4 position-relative z-1">
+  <div class="main-container">
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg custom-navbar px-4">
+    <nav class="custom-navbar">
 
-      <a class="navbar-brand logo" href="#">
+      <!-- Back -->
+      <a href="/index.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back
+      </a>
+
+      <!-- Logo -->
+      <a href="#" class="logo">
         <img src="./assets/image/logo.png" alt="logo">
       </a>
 
-      <button
-        class="navbar-toggler border-0 shadow-none"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarContent"
-      >
-        <i class="fa-solid fa-bars"></i>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarContent">
-
-        <ul class="navbar-nav mx-auto gap-lg-4">
-
-          <li class="nav-item">
-            <a class="nav-link" href="/index.html">Trang chủ</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sản phẩm</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">Hỗ trợ</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">Liên hệ</a>
-          </li>
-
-        </ul>
-
-      </div>
     </nav>
 
     <!-- LOGIN -->
     <section class="auth-wrapper">
 
-      <div class="auth-card text-center">
+      <div class="auth-card">
 
         <!-- Logo -->
         <div class="login-logo">
@@ -90,13 +65,12 @@
 
         <!-- Title -->
         <h1 class="auth-title">
-          ĐĂNG NHẬP TÀI KHOẢN
+          ĐĂNG NHẬP
         </h1>
 
         <!-- Subtitle -->
         <p class="auth-subtitle">
-          Truy cập hệ sinh thái công nghệ THT Tech,
-          theo dõi đơn hàng và cập nhật sản phẩm mới.
+          Truy cập hệ sinh thái công nghệ THT Tech
         </p>
 
         <!-- FORM -->
@@ -128,9 +102,11 @@
 
           <!-- Forgot -->
           <div class="forgot-wrap">
+
             <a href="#" class="forgot-link">
               Quên mật khẩu?
             </a>
+
           </div>
 
           <!-- Button -->
@@ -142,8 +118,13 @@
 
         <!-- Bottom -->
         <div class="bottom-text">
+
           Chưa có tài khoản?
-          <a href="./signup.html">Đăng ký</a>
+
+          <a href="/signup.html">
+            Đăng ký
+          </a>
+
         </div>
 
       </div>
@@ -154,7 +135,9 @@
 
   <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/js/signin.js"></script>
+
+  <!-- JS -->
+  <script src="./assets/js/signup.js"></script>
 
 </body>
 </html>
