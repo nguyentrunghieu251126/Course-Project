@@ -7,9 +7,9 @@ const inputBoxes =
 const registerBtn =
     document.querySelector('.btn-register');
 
-// =========================
-// INPUT EFFECT
-// =========================
+/* =========================
+   INPUT EFFECT
+========================= */
 
 inputBoxes.forEach(box => {
 
@@ -33,9 +33,9 @@ inputBoxes.forEach(box => {
 
 });
 
-// =========================
-// EMAIL VALIDATION
-// =========================
+/* =========================
+   EMAIL VALIDATION
+========================= */
 
 function isValidEmail(email){
 
@@ -46,9 +46,9 @@ function isValidEmail(email){
 
 }
 
-// =========================
-// PASSWORD VALIDATION
-// =========================
+/* =========================
+   PASSWORD VALIDATION
+========================= */
 
 function isStrongPassword(password){
 
@@ -56,9 +56,9 @@ function isStrongPassword(password){
 
 }
 
-// =========================
-// SHOW / HIDE PASSWORD
-// =========================
+/* =========================
+   SHOW / HIDE PASSWORD
+========================= */
 
 const passwordInputs =
     document.querySelectorAll('input[type="password"]');
@@ -77,8 +77,6 @@ passwordInputs.forEach(input => {
 
     eyeIcon.style.color = '#6b7280';
 
-    eyeIcon.style.marginLeft = '10px';
-
     parent.appendChild(eyeIcon);
 
     eyeIcon.addEventListener('click', () => {
@@ -87,18 +85,20 @@ passwordInputs.forEach(input => {
 
             input.type = 'text';
 
-            eyeIcon.classList.remove('fa-eye');
-
-            eyeIcon.classList.add('fa-eye-slash');
+            eyeIcon.classList.replace(
+                'fa-eye',
+                'fa-eye-slash'
+            );
 
         }
         else{
 
             input.type = 'password';
 
-            eyeIcon.classList.remove('fa-eye-slash');
-
-            eyeIcon.classList.add('fa-eye');
+            eyeIcon.classList.replace(
+                'fa-eye-slash',
+                'fa-eye'
+            );
 
         }
 
@@ -106,17 +106,13 @@ passwordInputs.forEach(input => {
 
 });
 
-// =========================
-// FORM SUBMIT
-// =========================
+/* =========================
+   SUBMIT
+========================= */
 
 registerForm.addEventListener('submit', function(e){
 
     e.preventDefault();
-
-    // =========================
-    // GET INPUTS
-    // =========================
 
     const fullName =
         document.querySelector('input[type="text"]').value.trim();
@@ -133,9 +129,7 @@ registerForm.addEventListener('submit', function(e){
     const confirmPassword =
         passwords[1].value.trim();
 
-    // =========================
-    // EMPTY CHECK
-    // =========================
+    /* EMPTY */
 
     if(
         fullName === '' ||
@@ -149,9 +143,7 @@ registerForm.addEventListener('submit', function(e){
 
     }
 
-    // =========================
-    // EMAIL CHECK
-    // =========================
+    /* EMAIL */
 
     if(!isValidEmail(email)){
 
@@ -160,9 +152,7 @@ registerForm.addEventListener('submit', function(e){
 
     }
 
-    // =========================
-    // PASSWORD LENGTH
-    // =========================
+    /* PASSWORD */
 
     if(!isStrongPassword(password)){
 
@@ -171,9 +161,7 @@ registerForm.addEventListener('submit', function(e){
 
     }
 
-    // =========================
-    // PASSWORD MATCH
-    // =========================
+    /* MATCH */
 
     if(password !== confirmPassword){
 
@@ -182,18 +170,14 @@ registerForm.addEventListener('submit', function(e){
 
     }
 
-    // =========================
-    // LOADING BUTTON
-    // =========================
+    /* BUTTON */
 
     registerBtn.disabled = true;
 
     registerBtn.innerHTML =
         '<i class="fa-solid fa-spinner fa-spin"></i> ĐANG XỬ LÝ...';
 
-    // =========================
-    // FAKE API
-    // =========================
+    /* FAKE API */
 
     setTimeout(() => {
 
@@ -205,12 +189,12 @@ registerForm.addEventListener('submit', function(e){
 
         registerForm.reset();
 
-        // remove active class
         inputBoxes.forEach(box => {
 
             box.classList.remove('active');
 
         });
+
         window.location.href = "signin.html";
 
     }, 1800);
