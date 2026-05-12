@@ -223,6 +223,7 @@
         </div>
       </section>
 
+      <!-- Countdown thời gian -->
       <section class="category-strip">
         <div class="container">
           <div class="category-shell">
@@ -254,6 +255,391 @@
                 <small>Sạc nhanh, tai nghe, hệ sinh thái gọn nhẹ</small>
               </span>
             </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Danh mục sản phẩm hot -->
+      <section class="section-space section-soft" id="featured">
+        <div class="container">
+          <div class="section-heading d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3">
+            <div>
+              <span class="eyebrow">
+                <i class="bi bi-lightning-charge-fill"></i>
+                Chọn nhanh theo nhu cầu
+              </span>
+              <h2>Sản phẩm hot nhất tuần này</h2>
+              <p>Danh sách được tuyển từ nhóm thiết bị có tỷ lệ chốt đơn cao, cấu hình ổn và mức giá dễ xuống tiền.</p>
+            </div>
+            <div class="filter-pills" role="tablist" aria-label="Lọc danh mục sản phẩm">
+              <button class="btn active" type="button" data-filter="all">Tất cả</button>
+              <button class="btn" type="button" data-filter="phone">Điện thoại</button>
+              <button class="btn" type="button" data-filter="tablet">Tablet</button>
+              <button class="btn" type="button" data-filter="laptop">Laptop</button>
+              <button class="btn" type="button" data-filter="accessory">Phụ kiện</button>
+            </div>
+          </div>
+          <div class="drag-scroll product-track mt-4" id="featuredProducts" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section-space" id="flash-deal">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-5" data-reveal>
+              <div class="deal-panel">
+                <span class="eyebrow eyebrow-dark">
+                  <i class="bi bi-fire"></i>
+                  Flash deal đang chạy
+                </span>
+                <h2>Ưu đãi giới hạn cho combo flagship + hệ sinh thái</h2>
+                <p>Khi mua máy trong khung giờ vàng, bạn nhận thêm ưu đãi cho sạc nhanh, tai nghe và gói bảo hành mở rộng. Chốt nhanh trước khi đồng hồ về 0.</p>
+
+                <!-- Countdown start: 4 node strong ben duoi duoc JS cap nhat moi giay -->
+                <div class="countdown-grid">
+                  <div class="countdown-box">
+                    <strong id="dealDays">00</strong>
+                    <span>Ngày</span>
+                  </div>
+                  <div class="countdown-box">
+                    <strong id="dealHours">00</strong>
+                    <span>Giờ</span>
+                  </div>
+                  <div class="countdown-box">
+                    <strong id="dealMinutes">00</strong>
+                    <span>Phút</span>
+                  </div>
+                  <div class="countdown-box">
+                    <strong id="dealSeconds">00</strong>
+                    <span>Giây</span>
+                  </div>
+                </div>
+                <!-- Countdown end -->
+
+                <div class="deal-bullets">
+                  <span><i class="bi bi-check2-circle"></i> Thu cũ đổi mới, định giá tại chỗ</span>
+                  <span><i class="bi bi-check2-circle"></i> Trả góp 0% qua thẻ tín dụng</span>
+                  <span><i class="bi bi-check2-circle"></i> Hỗ trợ cài đặt ngay khi nhận máy</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7" data-reveal>
+              <div class="showcase-card">
+                <div class="row g-4 align-items-center">
+                  <div class="col-md-6">
+                    <div class="showcase-media">
+                      <span class="showcase-badge">Giảm 18%</span>
+                      <img src="./assets/image/%C4%91i%C3%AA%CC%A3n%20thoa%CC%A3i%201.png" alt="Nova X Pro 15" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <span class="product-category">Flagship signature</span>
+                    <h3 class="showcase-title">Nova X Pro 15</h3>
+                    <p class="showcase-text">Màn hình OLED 120Hz, chip AI tối ưu camera và thời lượng pin bền để bạn quay, edit và làm việc cả ngày không bị ngắt nhịp.</p>
+                    <div class="showcase-specs">
+                      <span><i class="bi bi-cpu"></i> Chip AI thế hệ mới</span>
+                      <span><i class="bi bi-badge-8k"></i> Camera 50MP quay 4K</span>
+                      <span><i class="bi bi-battery-charging"></i> Sạc nhanh 80W</span>
+                    </div>
+                    <div class="showcase-price">
+                      <strong>$899</strong>
+                      <span>$1,099</span>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3">
+                      <button class="btn btn-accent" type="button" data-add-cart="nova-x-pro-15">Thêm vào giỏ</button>
+                      <button class="btn btn-outline-dark" type="button" data-toggle-like="nova-x-pro-15">Lưu yêu thích</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space section-muted">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-md-4" data-reveal>
+              <div class="service-card">
+                <div class="service-icon service-icon-blue"><i class="bi bi-truck"></i></div>
+                <h3>Giao nhanh có kiểm tra</h3>
+                <p>Ship nội thành thần tốc, nhận máy được kiểm tra ngoại quan và phụ kiện trước khi thanh toán.</p>
+              </div>
+            </div>
+            <div class="col-md-4" data-reveal>
+              <div class="service-card">
+                <div class="service-icon service-icon-orange"><i class="bi bi-arrow-repeat"></i></div>
+                <h3>Thu cũ đổi mới linh hoạt</h3>
+                <p>Định giá nhanh, bù chênh lệch rõ ràng để lên đời thiết bị ít áp lực tài chính hơn.</p>
+              </div>
+            </div>
+            <div class="col-md-4" data-reveal>
+              <div class="service-card">
+                <div class="service-icon service-icon-dark"><i class="bi bi-patch-check"></i></div>
+                <h3>Bảo hành chủ động</h3>
+                <p>Quy trình hậu mãi gọn, lịch sử mua hàng được lưu để hỗ trợ nhanh khi bạn cần kiểm tra bảo hành.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space" id="service">
+        <div class="container">
+          <div class="section-heading text-center mx-auto">
+            <span class="eyebrow justify-content-center">
+              <i class="bi bi-grid-1x2-fill"></i>
+              Không chỉ là sản phẩm
+            </span>
+            <h2>Một cửa hàng gọn gàng cho cả nhu cầu học, làm và chill</h2>
+            <p>NovaTech kết hợp chọn lọc danh mục, tư vấn cấu hình và hậu mãi để việc mua thiết bị không còn rối.</p>
+          </div>
+
+          <div class="row g-4 mt-2">
+            <div class="col-lg-8" data-reveal>
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="benefit-card">
+                    <span class="benefit-icon category-icon-blue"><i class="bi bi-phone-vibrate"></i></span>
+                    <h3>Tư vấn đúng bài toán</h3>
+                    <p>Chọn thiết bị theo nhu cầu thật: content creator, sinh viên, dân văn phòng, sale hay gaming.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="benefit-card">
+                    <span class="benefit-icon category-icon-orange"><i class="bi bi-palette2"></i></span>
+                    <h3>Thiết kế đẹp, trải nghiệm mượt</h3>
+                    <p>Ưu tiên những mẫu cân bằng tốt giữa hiệu năng, kiểu dáng và cảm giác sử dụng mỗi ngày.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="benefit-card">
+                    <span class="benefit-icon category-icon-green"><i class="bi bi-headset-vr"></i></span>
+                    <h3>Hệ sinh thái đồng bộ</h3>
+                    <p>Ghép thiết bị và phụ kiện theo combo hợp lý để học tập, làm việc và giải trí liền mạch hơn.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="benefit-card">
+                    <span class="benefit-icon category-icon-dark"><i class="bi bi-graph-up-arrow"></i></span>
+                    <h3>Giá trị sử dụng dài hạn</h3>
+                    <p>Gợi ý cấu hình không lỗi thời quá sớm, tối ưu để dùng bền, dễ bán lại và dễ nâng cấp.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-reveal>
+              <div class="insight-card">
+                <span class="eyebrow">
+                  <i class="bi bi-bar-chart-line-fill"></i>
+                  Thông tin đáng chú ý
+                </span>
+                <h3>Khách đến NovaTech thường mua gì?</h3>
+                <div class="insight-list">
+                  <div class="insight-item">
+                    <span>Điện thoại flagship</span>
+                    <strong>43%</strong>
+                  </div>
+                  <div class="insight-item">
+                    <span>Laptop mỏng nhẹ</span>
+                    <strong>28%</strong>
+                  </div>
+                  <div class="insight-item">
+                    <span>Tablet học tập</span>
+                    <strong>17%</strong>
+                  </div>
+                  <div class="insight-item">
+                    <span>Phụ kiện thông minh</span>
+                    <strong>12%</strong>
+                  </div>
+                </div>
+                <a href="#arrivals" class="btn btn-dark w-100 mt-3">Xem bộ sưu tập mới</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Arrivals section start: luoi san pham moi, duoc JS render toi da 4 item -->
+      <section class="section-space section-soft" id="arrivals">
+        <div class="container">
+          <div class="section-heading d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3">
+            <div>
+              <span class="eyebrow">
+                <i class="bi bi-box-seam"></i>
+                Bộ sưu tập mới lên kệ
+              </span>
+              <h2>Gợi ý đáng cân nhắc nếu bạn muốn mua trong tháng này</h2>
+              <p>Nhóm sản phẩm được chọn để vừa đẹp giao diện, vừa có hiệu năng và giá trị sử dụng ổn trong tầm giá.</p>
+            </div>
+            <a href="#faq" class="text-link">
+              Cần tư vấn nhanh?
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+
+          <!-- Dynamic arrivals grid: JS se chen cac card vao day -->
+          <div class="row g-4 mt-2" id="latestProducts" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section-space">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-5" data-reveal>
+              <span class="eyebrow">
+                <i class="bi bi-people-fill"></i>
+                Khách hàng tin chọn
+              </span>
+              <h2 class="mb-3">Những thương hiệu và cộng đồng sáng tạo đang đồng hành</h2>
+              <p class="text-muted mb-4">
+                Dù là sinh viên mới build góc học tập, nhân sự văn phòng cần laptop gọn hay creator cần máy quay chụp ổn định, NovaTech đều hướng tới trải nghiệm rõ ràng và ít rủi ro.
+              </p>
+              <div class="brand-cloud">
+                <span class="brand-chip">Aether Studio</span>
+                <span class="brand-chip">Motive Lab</span>
+                <span class="brand-chip">Pixel Crew</span>
+                <span class="brand-chip">Sora Campus</span>
+                <span class="brand-chip">Next Office</span>
+                <span class="brand-chip">Halo Team</span>
+              </div>
+            </div>
+
+            <div class="col-lg-7" data-reveal>
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="testimonial-card">
+                    <div class="testimonial-head">
+                      <div class="avatar">AN</div>
+                      <div>
+                        <h3>An Nhiên</h3>
+                        <p>Content Creator</p>
+                      </div>
+                    </div>
+                    <p class="mb-0">“Mình thích cách tư vấn ở đây vì không cố bán mẫu đắt nhất. Họ hỏi nhu cầu quay, edit, di chuyển rồi mới đề xuất máy và phụ kiện phù hợp.”</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="testimonial-card">
+                    <div class="testimonial-head">
+                      <div class="avatar avatar-orange">TH</div>
+                      <div>
+                        <h3>Tuấn Hào</h3>
+                        <p>Product Designer</p>
+                      </div>
+                    </div>
+                    <p class="mb-0">“Combo laptop, màn hình và hub được set rất gọn. Nhận máy xong là mình vào việc luôn, không phải mua bổ sung lặt vặt quá nhiều.”</p>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="testimonial-card testimonial-highlight">
+                    <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center mb-3">
+                      <div>
+                        <span class="small text-uppercase fw-semibold text-body-secondary">Điểm hài lòng trung bình</span>
+                        <h3 class="mb-0">4.9/5 từ hơn 3,000 lượt đánh giá</h3>
+                      </div>
+                      <div class="rating-pill">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                    <p class="mb-0">“Điểm cộng lớn nhất là quy trình mua hàng mạch lạc: tư vấn rõ, giá dễ hiểu, giao nhanh và hậu mãi không vòng vo.”</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space section-muted" id="faq">
+        <div class="container">
+          <div class="row g-4 align-items-start">
+            <div class="col-lg-7" data-reveal>
+              <div class="section-heading mb-4">
+                <span class="eyebrow">
+                  <i class="bi bi-question-circle-fill"></i>
+                  Câu hỏi thường gặp
+                </span>
+                <h2>Một vài điều khách hay hỏi trước khi chốt đơn</h2>
+                <p>Giải đáp nhanh để bạn yên tâm hơn trước khi chọn thiết bị phù hợp với ngân sách.</p>
+              </div>
+
+              <!-- Accordion start: moi button dieu khien 1 panel collapse bang data-bs-* -->
+              <div class="accordion custom-accordion" id="faqAccordion">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+                      NovaTech có hỗ trợ trả góp không?
+                    </button>
+                  </h3>
+                  <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Có. Bạn có thể chọn trả góp qua thẻ tín dụng hoặc hồ sơ tài chính tùy chương trình áp dụng tại thời điểm mua hàng.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+                      Nếu tôi chưa chắc cấu hình nào phù hợp thì sao?
+                    </button>
+                  </h3>
+                  <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      Bạn chỉ cần mô tả nhu cầu chính như học tập, làm việc, chỉnh sửa ảnh/video hay chơi game. Đội ngũ sẽ gợi ý theo đúng bài toán thay vì đẩy bạn lên mức giá cao hơn cần thiết.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+                      Có được kiểm tra hàng trước khi thanh toán không?
+                    </button>
+                  </h3>
+                  <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Có với các đơn giao nội thành và theo chính sách từng khu vực. NovaTech ưu tiên trải nghiệm minh bạch để bạn yên tâm nhận máy.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
+                      Sau khi mua có hỗ trợ cài đặt hay chuyển dữ liệu không?
+                    </button>
+                  </h3>
+                  <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Có. Tùy sản phẩm, bạn có thể được hỗ trợ kích hoạt máy, dán cơ bản, đăng nhập tài khoản và chuyển dữ liệu ban đầu.</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Accordion end -->
+            </div>
+
+            <div class="col-lg-5" data-reveal>
+              <div class="newsletter-card">
+                <span class="eyebrow eyebrow-dark">
+                  <i class="bi bi-envelope-paper-fill"></i>
+                  Đăng ký ưu đãi
+                </span>
+                <h3>Nhận deal sớm hơn mọi người một nhịp</h3>
+                <p>Để lại email để nhận thông tin về đợt giảm giá, cấu hình đáng mua và những combo phụ kiện đang có lợi nhất.</p>
+                <!-- Newsletter form start: form demo, JS reset va hien toast khi submit -->
+                <form class="newsletter-form">
+                  <input type="email" class="form-control" placeholder="Email của bạn" aria-label="Email nhận ưu đãi" />
+                  <button class="btn btn-light" type="submit">Đăng ký</button>
+                </form>
+                <!-- Newsletter form end -->
+                <ul class="list-unstyled mb-0 mt-4 newsletter-list">
+                  <li><i class="bi bi-check-lg"></i> Không spam, chỉ gửi khi có tin đáng xem</li>
+                  <li><i class="bi bi-check-lg"></i> Ưu đãi thành viên và voucher sinh nhật</li>
+                  <li><i class="bi bi-check-lg"></i> Gợi ý cấu hình theo từng nhóm nhu cầu</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
