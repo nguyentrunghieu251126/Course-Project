@@ -6,32 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THT TECH</title>
 
-    <link rel="stylesheet" href="./assets/css/payment.css">
+    <link rel="stylesheet" href="./payment.css">
 </head>
 
 <body>
 
     <div class="page-wrapper">
 
-        <!-- HEADER -->
+        <!-- NAVBAR -->
         <header class="modern-header">
 
-            <div class="modern-logo">
-
-                <img src="./assets/image/logo.png" alt="logo">
-
-                <h1>THT TECH</h1>
-
+            <div class="back-btn">
+                ← Back
             </div>
 
-            <nav class="modern-menu">
+            <div class="modern-logo">
+                <img src="./assets/image/logo.png" alt="logo">
+                <h1>THT TECH</h1>
+            </div>
 
-                <a href="/index.html">Trang chủ</a>
-                <a href="#">Sản phẩm</a>
-                <a href="#">Hỗ trợ</a>
-                <a href="#">Liên hệ</a>
-
-            </nav>
+            <div class="empty-space"></div>
 
         </header>
 
@@ -45,17 +39,17 @@
 
                 <div class="form-group">
                     <label>Tên</label>
-                    <input type="text" placeholder="Nhập họ và tên">
+                    <input type="text" id="fullname" placeholder="Nhập họ và tên">
                 </div>
 
                 <div class="form-group">
                     <label>Địa chỉ</label>
-                    <input type="text" placeholder="123 Đường ABC, Phường XYZ">
+                    <input type="text" id="address" placeholder="123 Đường ABC, Phường XYZ">
                 </div>
 
                 <div class="form-group">
                     <label>SĐT</label>
-                    <input type="text" placeholder="(084) 123 456">
+                    <input type="text" id="phone" placeholder="(084) 123 456">
                 </div>
 
                 <div class="form-group">
@@ -82,10 +76,47 @@
                     <span>💳 ATM / Banking</span>
                 </div>
 
-                <!-- TOTAL -->
-                <div class="total-box">
+                <!-- ORDER SUMMARY -->
+                <div class="order-summary">
 
-                    <h3>TỔNG ĐƠN HÀNG</h3>
+                    <h2>ORDER SUMMARY</h2>
+
+                    <div class="product-item">
+
+                        <img src="./assets/image/điện thoại 1.png" alt="iphone">
+
+                        <div class="product-info">
+
+                            <h4>iPhone 15 Pro (256GB, Blue Titanium)</h4>
+
+                            <div class="quantity">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+
+                        </div>
+
+                        <div class="price">
+                            $999
+                        </div>
+
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span>$999</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span>Free</span>
+                    </div>
+
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span>$999</span>
+                    </div>
 
                 </div>
 
@@ -99,7 +130,30 @@
 
     </div>
 
-    <script src="./assets/js/payment.js"></script>
+    <!-- POPUP -->
+    <div class="success-popup" id="successPopup">
+
+        <div class="popup-box">
+
+            <div class="check-icon">
+                ✔
+            </div>
+
+            <h2>Cảm ơn bạn đã đặt hàng!</h2>
+
+            <p>
+                Chúng tôi sẽ liên hệ xác nhận đơn hàng sớm nhất.
+            </p>
+
+            <a href="/index.html" class="home-btn">
+                Quay về Trang chủ
+            </a>
+
+        </div>
+
+    </div>
+
+    <script src="./payment.js"></script>
 
 </body>
 
