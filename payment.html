@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THT TECH</title>
+
+    <link rel="stylesheet" href="./payment.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <!-- NAVBAR -->
+        <header class="modern-header">
+
+            <a href="/index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                   Back
+              </a>
+
+            <div class="modern-logo">
+                <img src="./assets/image/logo.png" alt="logo">
+                <h1>THT TECH</h1>
+            </div>
+
+            <div class="empty-space"></div>
+
+        </header>
+
+        <!-- CONTENT -->
+        <div class="container">
+
+            <!-- LEFT -->
+            <div class="left-box">
+
+                <h2>THÔNG TIN GIAO HÀNG</h2>
+
+                <div class="form-group">
+                    <label>Tên</label>
+                    <input type="text" id="fullname" placeholder="Nhập họ và tên">
+                </div>
+
+                <div class="form-group">
+                    <label>Địa chỉ</label>
+                    <input type="text" id="address" placeholder="123 Đường ABC, Phường XYZ">
+                </div>
+
+                <div class="form-group">
+                    <label>SĐT</label>
+                    <input type="text" id="phone" placeholder="(084) 123 456">
+                </div>
+
+                <div class="form-group">
+                    <label>Notes</label>
+                    <textarea placeholder="..."></textarea>
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="right-box">
+
+                <h2>PHƯƠNG THỨC THANH TOÁN</h2>
+
+                <p class="choose">Chọn phương thức thanh toán:</p>
+
+                <div class="payment-method active">
+                    <input type="radio" name="payment" checked>
+                    <span>💲 Tiền mặt</span>
+                </div>
+
+                <div class="payment-method">
+                    <input type="radio" name="payment">
+                    <span>💳 ATM / Banking</span>
+                </div>
+
+                <!-- ORDER SUMMARY -->
+                <div class="order-summary">
+
+                    <h2>ORDER SUMMARY</h2>
+
+                    <div class="product-item">
+
+                        <img src="./assets/image/điện thoại 1.png" alt="iphone">
+
+                        <div class="product-info">
+
+                            <h4>iPhone 15 Pro (256GB, Blue Titanium)</h4>
+
+                            <div class="quantity">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+
+                        </div>
+
+                        <div class="price">
+                            $999
+                        </div>
+
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span>$999</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span>Free</span>
+                    </div>
+
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span>$999</span>
+                    </div>
+
+                </div>
+
+                <button id="payBtn">
+                    XÁC NHẬN THANH TOÁN
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- POPUP -->
+    <div class="success-popup" id="successPopup">
+
+        <div class="popup-box">
+
+            <div class="check-icon">
+                ✔
+            </div>
+
+            <h2>Cảm ơn bạn đã đặt hàng!</h2>
+
+            <p>
+                Chúng tôi sẽ liên hệ xác nhận đơn hàng sớm nhất.
+            </p>
+
+            <a href="/index.html" class="home-btn">
+                Quay về Trang chủ
+            </a>
+
+        </div>
+
+    </div>
+
+    <script src="./payment.js"></script>
+
+</body>
+
+</html>
