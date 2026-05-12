@@ -1,338 +1,72 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Be Vietnam Pro',sans-serif;
-}
+const inputBoxes = document.querySelectorAll('.input-box');
 
-body{
-    min-height:100vh;
-    background:#f5f7fc;
-    overflow:hidden;
-    position:relative;
-}
+inputBoxes.forEach(box => {
 
-/* =========================
-   BACKGROUND
-========================= */
+    const input = box.querySelector('input');
 
-.bg-glow{
-    position:fixed;
-    border-radius:50%;
-    filter:blur(80px);
-    z-index:0;
-}
+    input.addEventListener('focus', () => {
+        box.classList.add('active');
+    });
 
-.glow-1{
-    width:400px;
-    height:400px;
-    background:rgba(79,70,229,0.12);
-    top:-120px;
-    left:-120px;
-}
+    input.addEventListener('blur', () => {
 
-.glow-2{
-    width:350px;
-    height:350px;
-    background:rgba(99,102,241,0.10);
-    bottom:-100px;
-    right:-100px;
-}
+        if(input.value.trim() === ''){
+            box.classList.remove('active');
+        }
 
-/* =========================
-   CONTAINER
-========================= */
+    });
 
-.main-container{
-    width:100%;
-    min-height:100vh;
-    padding:20px;
-    position:relative;
-    z-index:2;
-}
+});
 
-/* =========================
-   NAVBAR
-========================= */
+// =========================
+// LOGIN FORM
+// =========================
 
-.custom-navbar{
-    width:100%;
-    max-width:1100px;
+const form = document.querySelector('form');
 
-    height:72px;
+form.addEventListener('submit', function(e){
 
-    background:#fff;
+    e.preventDefault();
 
-    margin:0 auto;
+    const email =
+        form.querySelector('input[type="email"]').value.trim();
 
-    border-radius:20px;
+    const password =
+        form.querySelector('input[type="password"]').value.trim();
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    // Validate
+    if(email === '' || password === ''){
 
-    position:relative;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.05);
-}
-
-/* =========================
-   BACK BUTTON
-========================= */
-
-.back-btn{
-    position:absolute;
-
-    left:24px;
-
-    display:flex;
-    align-items:center;
-    gap:8px;
-
-    text-decoration:none;
-
-    color:#111827;
-
-    font-size:15px;
-    font-weight:600;
-
-    transition:0.3s;
-}
-
-.back-btn:hover{
-    color:#3558ff;
-}
-
-/* =========================
-   LOGO
-========================= */
-
-.logo img{
-    width:130px;
-    height:auto;
-    object-fit:contain;
-}
-
-/* =========================
-   AUTH WRAPPER
-========================= */
-
-.auth-wrapper{
-    width:100%;
-    min-height:calc(100vh - 120px);
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-/* =========================
-   CARD
-========================= */
-
-.auth-card{
-    width:100%;
-    max-width:430px;
-
-    background:#fff;
-
-    border-radius:28px;
-
-    padding:40px 32px;
-
-    text-align:center;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.08);
-}
-
-/* =========================
-   LOGIN LOGO
-========================= */
-
-.login-logo{
-    margin-bottom:24px;
-}
-
-.login-logo img{
-    width:150px;
-}
-
-/* =========================
-   TITLE
-========================= */
-
-.auth-title{
-    font-size:32px;
-    font-weight:800;
-
-    color:#111827;
-
-    margin-bottom:10px;
-}
-
-/* =========================
-   SUBTITLE
-========================= */
-
-.auth-subtitle{
-    font-size:15px;
-
-    color:#6b7280;
-
-    margin-bottom:30px;
-}
-
-/* =========================
-   INPUT
-========================= */
-
-.input-box{
-    width:100%;
-    height:56px;
-
-    display:flex;
-    align-items:center;
-
-    padding:0 18px;
-
-    margin-bottom:18px;
-
-    background:#f9fbff;
-
-    border:1px solid #dbe2ff;
-    border-radius:16px;
-
-    transition:0.3s;
-}
-
-.input-box.active{
-    border-color:#3558ff;
-
-    box-shadow:
-        0 0 0 4px rgba(53,88,255,0.10);
-}
-
-.input-box i{
-    color:#6b7280;
-    margin-right:12px;
-}
-
-.input-box input{
-    width:100%;
-
-    border:none;
-    outline:none;
-
-    background:transparent;
-
-    font-size:15px;
-}
-
-/* =========================
-   FORGOT
-========================= */
-
-.forgot-wrap{
-    text-align:right;
-    margin-bottom:22px;
-}
-
-.forgot-link{
-    text-decoration:none;
-
-    color:#3558ff;
-
-    font-size:14px;
-    font-weight:600;
-}
-
-/* =========================
-   BUTTON
-========================= */
-
-.login-btn{
-    width:100%;
-    height:56px;
-
-    border:none;
-    border-radius:16px;
-
-    background:
-        linear-gradient(to right,#3558ff,#4f46e5);
-
-    color:#fff;
-
-    font-size:17px;
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:0.3s;
-}
-
-.login-btn:hover{
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 12px 24px rgba(53,88,255,0.25);
-}
-
-/* =========================
-   BOTTOM
-========================= */
-
-.bottom-text{
-    margin-top:24px;
-
-    font-size:14px;
-
-    color:#6b7280;
-}
-
-.bottom-text a{
-    text-decoration:none;
-
-    color:#3558ff;
-
-    font-weight:700;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:768px){
-
-    .main-container{
-        padding:14px;
+        alert('Vui lòng nhập đầy đủ thông tin!');
+        return;
     }
 
-    .custom-navbar{
-        height:64px;
-        border-radius:18px;
+    // Email format
+    const emailRegex =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!emailRegex.test(email)){
+
+        alert('Email không hợp lệ!');
+        return;
     }
 
-    .back-btn{
-        left:18px;
-        font-size:14px;
-    }
+    // Button
+    const btn =
+        document.querySelector('.login-btn');
 
-    .logo img{
-        width:110px;
-    }
+    btn.innerHTML = 'ĐANG ĐĂNG NHẬP...';
 
-    .auth-card{
-        padding:32px 22px;
-    }
+    btn.disabled = true;
 
-    .auth-title{
-        font-size:26px;
-    }
+    setTimeout(() => {
 
-    .login-logo img{
-        width:120px;
-    }
+        alert('Đăng nhập thành công!');
 
-}
+        btn.innerHTML = 'ĐĂNG NHẬP';
+
+        btn.disabled = false;
+
+    }, 1500);
+
+});
