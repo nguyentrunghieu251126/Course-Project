@@ -34,10 +34,7 @@ body {
   color: var(--text-main);
   font-family: var(--font-body);
   line-height: 1.6;
-  background:
-    radial-gradient(circle at top left, rgba(34, 81, 255, 0.1), transparent 30%),
-    radial-gradient(circle at top right, rgba(255, 122, 24, 0.12), transparent 25%),
-    #f4f7fb;
+  background: radial-gradient(circle at top left, rgba(34, 81, 255, 0.1), transparent 30%), radial-gradient(circle at top right, rgba(255, 122, 24, 0.12), transparent 25%), #f4f7fb;
 }
 
 /* Dùng box model đồng nhất cho toàn bộ phần tử */
@@ -56,12 +53,6 @@ h5,
 h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.03em;
-}
-
-/* Link mặc định kế thừa màu chữ và bỏ gạch chân */
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 /* Ảnh luôn co giãn theo khung chứa */
@@ -114,4 +105,81 @@ img {
 .newsletter-card p {
   overflow-wrap: anywhere;
   word-break: break-word;
+}
+
+/* Nền sáng nhẹ cho các section cần tách lớp */
+.section-soft {
+  background: linear-gradient(180deg, rgba(232, 239, 255, 0.65), rgba(255, 255, 255, 0.95)), #fff;
+}
+
+/* Section nền trắng dùng cho các khối nội dung trung tính */
+.section-muted {
+  background: #fff;
+}
+
+/* Nhãn nhỏ phía trên tiêu đề section */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  color: var(--brand-blue);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(34, 81, 255, 0.08);
+}
+
+/* Biến thể nhãn dùng trên nền tối */
+.eyebrow-dark {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Khối chứa tiêu đề và mô tả của từng section */
+.section-heading {
+  max-width: 700px;
+}
+
+.section-heading h2 {
+  margin: 1rem 0 0.75rem;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+}
+
+.section-heading p {
+  margin-bottom: 0;
+  color: var(--text-sub);
+}
+
+/* Hiệu ứng hiện dần khi phần tử đi vào màn hình */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Nút chính dùng cho tìm kiếm và hành động nổi bật */
+.btn-accent {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--brand-orange), #ff9351);
+  box-shadow: 0 4px 15px rgba(255, 122, 24, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 122, 24, 0.4);
 }

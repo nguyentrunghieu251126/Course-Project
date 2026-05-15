@@ -32,14 +32,15 @@
   </head>
   <body>
     <!-- Thanh thanh báo đầu trang -->
-    <div class="promo-bar py-2">
+    <div class="header-notification-bar py-2 text-light">
       <div class="container">
-        <div class="d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-2 text-center text-lg-start">
+        <div class="d-flex flex-wrap justify-content-center justify-content-xl-between align-items-center gap-2 text-center text-xl-start">
           <p class="mb-0">Tuần lễ công nghệ mới: miễn phí giao nhanh nội thành và hỗ trợ trả góp 0%.</p>
-          <div class="d-flex flex-wrap justify-content-center gap-3 promo-points">
-            <span><i class="bi bi-lightning-charge-fill"></i> Flash deal mỗi ngày</span>
-            <span><i class="bi bi-shield-check"></i> Bảo hành minh bạch</span>
-            <span><i class="bi bi-headset"></i> Hỗ trợ 24/7</span>
+          <!-- Các icon thông báo -->
+          <div class="header-notification-icons d-flex flex-wrap justify-content-center gap-3">
+            <span class="d-inline-flex align-items-center"><i class="bi bi-lightning-charge-fill"></i> Flash deal mỗi ngày</span>
+            <span class="d-inline-flex align-items-center"><i class="bi bi-shield-check"></i> Bảo hành minh bạch</span>
+            <span class="d-inline-flex align-items-center"><i class="bi bi-headset"></i> Hỗ trợ 24/7</span>
           </div>
         </div>
       </div>
@@ -47,6 +48,7 @@
 
     <!-- Header -->
     <header class="bg-white sticky-top shadow-sm">
+      <!-- Giao diện cho pc -->
       <div class="d-none d-xl-block shadow-sm">
         <div class="row align-items-center justify-content-between">
           <!-- Logo thương hiệu -->
@@ -58,8 +60,8 @@
 
           <!-- Tra cứu search -->
           <div class="col-lg-7">
-            <form class="search-form d-none d-xl-flex" role="search">
-              <i class="bi bi-search"></i>
+            <form class="search-form d-none d-xl-flex align-items-center" role="search">
+              <i class="bi bi-search flex-shrink-0"></i>
               <input type="search" class="form-control" placeholder="Tìm điện thoại..." />
               <button class="btn btn-accent" type="submit">Tìm</button>
             </form>
@@ -67,20 +69,20 @@
 
           <!-- Khu vực người dùng -->
           <div class="col-lg-3">
-            <div class="header-actions d-flex justify-content-evenly align-items-center gap-3">
-              <button class="action-button position-relative" type="button">
+            <div class="header-notification-actions d-flex flex-wrap justify-content-evenly align-items-center gap-2 ms-0">
+              <button class="header-action-button position-relative p-0 d-inline-flex justify-content-center align-items-center" type="button">
                 <i class="bi bi-heart fs-5"></i>
-                <span class="action-badge">0</span>
+                <span class="header-action-badge position-absolute d-inline-flex justify-content-center align-items-center text-light">0</span>
               </button>
 
-              <button class="action-button position-relative" type="button">
+              <button class="header-action-button position-relative p-0 d-inline-flex justify-content-center align-items-center" type="button">
                 <i class="bi bi-cart2 fs-5"></i>
-                <span class="action-badge">0</span>
+                <span class="header-action-badge position-absolute d-inline-flex justify-content-center align-items-center text-light">0</span>
               </button>
 
-              <a class="account-chip d-none d-md-inline-flex align-items-center" href="#">
+              <a class="header-account-chip d-none d-md-inline-flex align-items-center justify-content-center text-decoration-none position-relative" href="#">
                 <i class="bi bi-person-circle fs-4 me-2"></i>
-                <span>Đăng Nhập</span>
+                <span class="overflow-hidden">Đăng Nhập</span>
               </a>
             </div>
           </div>
@@ -89,7 +91,7 @@
         <!-- Header menu -->
         <nav class="bg-dark w-100">
           <div class="container">
-            <ul class="nav justify-content-center py-2 gap-5">
+            <ul class="nav justify-content-center py-1 gap-5">
               <li class="nav-item"><a class="nav-link fs-5 text-white px-0" href="#">Điện thoại</a></li>
               <li class="nav-item"><a class="nav-link fs-5 text-white px-0" href="#">Máy tính bảng</a></li>
               <li class="nav-item"><a class="nav-link fs-5 text-white px-0" href="#">Laptop</a></li>
@@ -114,9 +116,9 @@
         </a>
 
         <!-- Giỏ hàng -->
-        <button class="action-button position-relative" type="button">
+        <button class="header-action-button position-relative p-0 d-inline-flex justify-content-center align-items-center" type="button">
           <i class="bi bi-cart2 fs-5"></i>
-          <span class="action-badge">0</span>
+          <span class="header-action-badge position-absolute d-inline-flex justify-content-center align-items-center text-light">0</span>
         </button>
       </div>
 

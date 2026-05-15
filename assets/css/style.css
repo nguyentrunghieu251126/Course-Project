@@ -1,92 +1,10 @@
-/* Nền sáng nhẹ cho các section cần tách lớp */
-.section-soft {
-  background:
-    linear-gradient(180deg, rgba(232, 239, 255, 0.65), rgba(255, 255, 255, 0.95)),
-    #fff;
-}
-
-/* Section nền trắng dùng cho các khối nội dung trung tính */
-.section-muted {
-  background: #fff;
-}
-
-/* Nhãn nhỏ phía trên tiêu đề section */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.5rem 0.95rem;
-  border-radius: 999px;
-  color: var(--brand-blue);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: rgba(34, 81, 255, 0.08);
-}
-
-/* Biến thể nhãn dùng trên nền tối */
-.eyebrow-dark {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-/* Khối chứa tiêu đề và mô tả của từng section */
-.section-heading {
-  max-width: 700px;
-}
-
-.section-heading h2 {
-  margin: 1rem 0 0.75rem;
-  font-size: clamp(2rem, 3.2vw, 3rem);
-}
-
-.section-heading p {
-  margin-bottom: 0;
-  color: var(--text-sub);
-}
-
-/* Hiệu ứng hiện dần khi phần tử đi vào màn hình */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity 0.75s ease,
-    transform 0.75s ease;
-}
-
-[data-reveal].is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Nút chính dùng cho tìm kiếm và hành động nổi bật */
-.btn-accent {
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 999px;
-  color: #fff;
-  font-weight: 600;
-  background: linear-gradient(135deg, var(--brand-orange), #ff9351);
-  box-shadow: 0 4px 15px rgba(255, 122, 24, 0.3);
-  transition: all 0.3s ease;
-}
-
-.btn-accent:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(255, 122, 24, 0.4);
-}
-
 /* Thanh thông báo đầu trang */
-.promo-bar {
-  color: #fff;
+.header-notification-bar {
   font-size: 0.92rem;
   background: linear-gradient(90deg, #0f172a, #19376d);
 }
 
-.promo-points span {
-  display: inline-flex;
-  align-items: center;
+.header-notification-icons span {
   gap: 0.4rem;
   opacity: 0.86;
 }
@@ -97,8 +15,6 @@
 }
 
 .search-form {
-  display: flex;
-  align-items: center;
   gap: 0.75rem;
   min-width: 0;
   padding: 0.35rem 0.35rem 0.35rem 1rem;
@@ -114,7 +30,6 @@
 }
 
 .search-form i {
-  flex-shrink: 0;
   color: var(--text-sub);
 }
 
@@ -131,22 +46,13 @@
 }
 
 /* Nhóm nút thao tác ở header */
-.header-actions {
-  display: flex;
+.header-notification-actions {
   flex: 0 0 auto;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
   gap: 0.75rem;
-  margin-left: 0;
 }
 
-.action-button,
-.account-chip {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.header-action-button,
+.header-account-chip {
   gap: 0.55rem;
   min-width: 50px;
   height: 50px;
@@ -160,46 +66,39 @@
     border-color 0.25s ease;
 }
 
-.action-button {
+.header-action-button {
   width: 50px;
-  padding: 0;
 }
 
-.account-chip {
+.header-account-chip {
   max-width: 100%;
   padding: 0 1rem;
 }
 
-.account-chip span {
-  overflow: hidden;
+.header-account-chip span {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.action-button i,
-.account-chip i {
+.header-action-button i,
+.header-account-chip i {
   font-size: 1.15rem;
 }
 
-.action-button:hover,
-.account-chip:hover {
+.header-action-button:hover,
+.header-account-chip:hover {
   transform: translateY(-2px);
   border-color: rgba(34, 81, 255, 0.28);
   box-shadow: 0 16px 24px rgba(15, 23, 42, 0.08);
 }
 
-.action-badge {
-  position: absolute;
+.header-action-badge {
   top: 2px;
   right: 2px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   min-width: 22px;
   height: 22px;
   padding: 0 0.35rem;
   border-radius: 999px;
-  color: #fff;
   font-size: 0.72rem;
   font-weight: 700;
   background: var(--brand-orange);
@@ -216,21 +115,12 @@ header nav .nav-link {
 header nav .nav-link::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: 2px;
   left: 0;
   width: 100%;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    #ff0000,
-    #ff7f00,
-    #ffff00,
-    #00ff00,
-    #0000ff,
-    #4b0082,
-    #8b008b
-  );
+  background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b008b);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -251,9 +141,7 @@ header nav .nav-link:hover::after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(125deg, rgba(34, 81, 255, 0.07), transparent 46%),
-    linear-gradient(315deg, rgba(255, 122, 24, 0.08), transparent 40%);
+  background: linear-gradient(125deg, rgba(34, 81, 255, 0.07), transparent 46%), linear-gradient(315deg, rgba(255, 122, 24, 0.08), transparent 40%);
   pointer-events: none;
 }
 
@@ -318,9 +206,7 @@ header nav .nav-link:hover::after {
   min-height: 490px;
   overflow: hidden;
   border-radius: 36px;
-  background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.14), transparent 38%),
-    linear-gradient(145deg, #14213d, #203a74);
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.14), transparent 38%), linear-gradient(145deg, #14213d, #203a74);
   box-shadow: var(--shadow-lg);
 }
 
@@ -1260,7 +1146,7 @@ header nav .nav-link:hover::after {
 
 /* Điều chỉnh giao diện ở màn hình điện thoại lớn */
 @media (max-width: 767.98px) {
-  .promo-bar {
+  .header-notification-bar {
     font-size: 0.84rem;
   }
 
