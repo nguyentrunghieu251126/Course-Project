@@ -1,34 +1,28 @@
-/* Biến màu, font và kích thước dùng chung cho toàn trang */
+/* Bien giao dien dung chung */
 :root {
   --font-body: "Plus Jakarta Sans", sans-serif;
   --font-heading: "Space Grotesk", sans-serif;
+  --font-footer: "Times New Roman", Times, serif;
   --brand-dark: #0f172a;
-  --brand-dark-soft: #1d2841;
   --brand-blue: #2251ff;
   --brand-blue-soft: #e8efff;
   --brand-orange: #ff7a18;
   --brand-orange-soft: #fff1e7;
   --brand-green: #10b981;
-  --surface: #ffffff;
-  --surface-muted: #f5f7fb;
-  --surface-alt: #eef3fb;
   --text-main: #162033;
   --text-sub: #5d6b82;
   --border-soft: rgba(22, 32, 51, 0.1);
   --shadow-lg: 0 30px 70px rgba(15, 23, 42, 0.14);
   --shadow-md: 0 18px 35px rgba(15, 23, 42, 0.08);
   --radius-xl: 32px;
-  --radius-lg: 24px;
-  --radius-md: 18px;
 }
 
-/* Cuộn mượt và chừa khoảng cho header bám dính */
+/* Cau hinh mac dinh cua trang */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 110px;
 }
 
-/* Thiết lập font, màu chữ và nền mặc định của trang */
 body {
   overflow-x: hidden;
   color: var(--text-main);
@@ -37,87 +31,58 @@ body {
   background: radial-gradient(circle at top left, rgba(34, 81, 255, 0.1), transparent 30%), radial-gradient(circle at top right, rgba(255, 122, 24, 0.12), transparent 25%), #f4f7fb;
 }
 
-/* Dùng box model đồng nhất cho toàn bộ phần tử */
+footer {
+  font-family: var(--font-footer);
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Font tiêu đề dùng riêng để nổi bật hơn phần nội dung */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.03em;
 }
 
-/* Ảnh luôn co giãn theo khung chứa */
 img {
   display: block;
   max-width: 100%;
 }
 
-/* Tùy biến nút Bootstrap để đồng nhất giao diện */
+/* Thanh phan duoc dung lai o nhieu khu vuc */
 .btn {
   padding: 0.78rem 1.35rem;
   border-radius: 999px;
   font-weight: 600;
 }
 
-/* Tăng độ dày viền cho nút outline tối */
 .btn-outline-dark {
   border-width: 1.5px;
 }
 
-/* Đổi màu nút outline khi được đánh dấu là đang chọn */
-.btn-outline-dark.is-active {
-  color: var(--brand-orange);
-  background: var(--brand-orange-soft);
-  border-color: rgba(255, 122, 24, 0.4);
-}
-
-/* Khoảng cách mặc định giữa các section lớn */
 .section-space {
   padding: 5.5rem 0;
 }
 
-/* Chống tràn chữ cho các khối nội dung dài trên trang */
 .category-pill strong,
 .category-pill small,
 .product-name,
-.product-desc,
-.showcase-title,
-.showcase-text,
-.service-card h3,
-.service-card p,
-.benefit-card h3,
-.benefit-card p,
-.insight-card h3,
-.insight-card p,
-.insight-item span,
-.testimonial-head h3,
-.testimonial-card p,
-.newsletter-card h3,
-.newsletter-card p {
+.product-desc {
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
-/* Nền sáng nhẹ cho các section cần tách lớp */
 .section-soft {
   background: linear-gradient(180deg, rgba(232, 239, 255, 0.65), rgba(255, 255, 255, 0.95)), #fff;
 }
 
-/* Section nền trắng dùng cho các khối nội dung trung tính */
-.section-muted {
-  background: #fff;
-}
-
-/* Nhãn nhỏ phía trên tiêu đề section */
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -132,28 +97,10 @@ img {
   background: rgba(34, 81, 255, 0.08);
 }
 
-/* Biến thể nhãn dùng trên nền tối */
-.eyebrow-dark {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-/* Khối chứa tiêu đề và mô tả của từng section */
 .section-heading {
   max-width: 700px;
 }
 
-.section-heading h2 {
-  margin: 1rem 0 0.75rem;
-  font-size: clamp(2rem, 3.2vw, 3rem);
-}
-
-.section-heading p {
-  margin-bottom: 0;
-  color: var(--text-sub);
-}
-
-/* Hiệu ứng hiện dần khi phần tử đi vào màn hình */
 [data-reveal] {
   opacity: 0;
   transform: translateY(28px);
@@ -167,7 +114,7 @@ img {
   transform: translateY(0);
 }
 
-/* Nút chính dùng cho tìm kiếm và hành động nổi bật */
+/* Nut nhan chinh cua giao dien */
 .btn-accent {
   padding: 0.5rem 1.5rem;
   border: none;
@@ -182,4 +129,8 @@ img {
 .btn-accent:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(255, 122, 24, 0.4);
+}
+
+.section-muted {
+  background: #fff;
 }

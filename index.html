@@ -1,42 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Website</title>
-    <!-- Bootstrap -->
+    <link rel="icon" type="image/png" href="./logo.png" />
+    <title>THT - Tech</title>
+
+    <!-- Thu vien va stylesheet -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-
-    <!-- Font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-
-    <!-- Font-boostraap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
-
-    <!-- Base css -->
     <link rel="stylesheet" href="./assets/css/base.css" />
-
-    <!-- Style css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <!-- Thanh thanh báo đầu trang -->
+    <!-- Thanh thong bao dau trang -->
     <div class="header-notification-bar py-2 text-light">
       <div class="container">
         <div class="d-flex flex-wrap justify-content-center justify-content-xl-between align-items-center gap-2 text-center text-xl-start">
           <p class="mb-0">Tuần lễ công nghệ mới: miễn phí giao nhanh nội thành và hỗ trợ trả góp 0%.</p>
-          <!-- Các icon thông báo -->
           <div class="header-notification-icons d-flex flex-wrap justify-content-center gap-3">
             <span class="d-inline-flex align-items-center"><i class="bi bi-lightning-charge-fill"></i> Flash deal mỗi ngày</span>
             <span class="d-inline-flex align-items-center"><i class="bi bi-shield-check"></i> Bảo hành minh bạch</span>
@@ -46,19 +32,17 @@
       </div>
     </div>
 
-    <!-- Header -->
+    <!-- Header chinh -->
     <header class="bg-white sticky-top shadow-sm">
-      <!-- Giao diện cho pc -->
+      <!-- Header desktop -->
       <div class="d-none d-xl-block shadow-sm">
         <div class="row align-items-center justify-content-between">
-          <!-- Logo thương hiệu -->
           <div class="col-lg-2">
             <a href="#" class="text-decoration-none">
               <img src="./assets/image/logo.png" alt="ĐH Công Thương" class="img-fluid logo-img" />
             </a>
           </div>
 
-          <!-- Tra cứu search -->
           <div class="col-lg-7">
             <form class="search-form d-none d-xl-flex align-items-center" role="search">
               <i class="bi bi-search flex-shrink-0"></i>
@@ -67,17 +51,16 @@
             </form>
           </div>
 
-          <!-- Khu vực người dùng -->
           <div class="col-lg-3">
             <div class="header-notification-actions d-flex flex-wrap justify-content-evenly align-items-center gap-2 ms-0">
               <button class="header-action-button position-relative p-0 d-inline-flex justify-content-center align-items-center" type="button">
                 <i class="bi bi-heart fs-5"></i>
-                <span class="header-action-badge position-absolute d-inline-flex justify-content-center align-items-center text-light">0</span>
+                <span class="header-action-badge position-absolute d-inline-flex justify-content-center align-items-center text-light" data-wishlist-count>0</span>
               </button>
 
               <button class="header-action-button position-relative p-0 d-inline-flex justify-content-center align-items-center" type="button">
                 <i class="bi bi-cart2 fs-5"></i>
-                <span class="header-action-badge position-absolute d-inline-flex justify-content-center align-items-center text-light">0</span>
+                <span class="header-action-badge position-absolute d-inline-flex justify-content-center align-items-center text-light" data-cart-count>0</span>
               </button>
 
               <a class="header-account-chip d-none d-md-inline-flex align-items-center justify-content-center text-decoration-none position-relative" href="#">
@@ -88,65 +71,60 @@
           </div>
         </div>
 
-        <!-- Header menu -->
-        <nav class="bg-dark w-100">
+        <nav class="nav-gradient w-100">
           <div class="container">
-            <ul class="nav justify-content-center py-2 gap-4">
-              <li class="nav-item"><a class="nav-link fs-5 text-white" href="#">Điện thoại</a></li>
-              <li class="nav-item"><a class="nav-link fs-5 text-white" href="#">Máy tính bảng</a></li>
-              <li class="nav-item"><a class="nav-link fs-5 text-white" href="#">Laptop</a></li>
-              <li class="nav-item"><a class="nav-link fs-5 text-white" href="#">Phụ kiện</a></li>
-              <li class="nav-item"><a class="nav-link fs-5 text-white" href="#">Liên hệ</a></li>
-              <li class="nav-item"><a class="nav-link fs-5 text-white" href="#">Khuyến Mãi</a></li>
+            <ul class="nav justify-content-center py-1 gap-4">
+              <li class="nav-item"><a class="nav-link fs-5 text-white" href="#home">Trang chủ</a></li>
+              <li class="nav-item"><a class="nav-link fs-5 text-white" href="#featured" data-filter-shortcut="phone">Điện thoại</a></li>
+              <li class="nav-item"><a class="nav-link fs-5 text-white" href="#featured" data-filter-shortcut="tablet">Máy tính bảng</a></li>
+              <li class="nav-item"><a class="nav-link fs-5 text-white" href="#featured" data-filter-shortcut="laptop">Laptop</a></li>
+              <li class="nav-item"><a class="nav-link fs-5 text-white" href="#featured" data-filter-shortcut="accessory">Phụ kiện</a></li>
+              <li class="nav-item"><a class="nav-link fs-5 text-white" href="#home">Liên hệ</a></li>
+              <li class="nav-item"><a class="nav-link fs-5 text-white" href="#flash-deal" data-filter-shortcut="all">Khuyến Mãi</a></li>
             </ul>
           </div>
         </nav>
       </div>
 
-      <!-- Thanh header của mobile -->
+      <!-- Header mobile -->
       <div class="d-xl-none d-flex justify-content-between align-items-center px-3 py-2 w-100">
-        <!-- Icon thu nhỏ giao diện -->
         <button class="btn border-0 p-0 fs-1 text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
           <i class="bi bi-list"></i>
         </button>
 
-        <!-- Logo thương hiệu -->
         <a href="#">
           <img src="./assets/image/logo.png" alt="ĐH Công Thương" height="50" />
         </a>
 
-        <!-- Giỏ hàng -->
         <button class="header-action-button position-relative p-0 d-inline-flex justify-content-center align-items-center" type="button">
           <i class="bi bi-cart2 fs-5"></i>
-          <span class="header-action-badge position-absolute d-inline-flex justify-content-center align-items-center text-light">0</span>
+          <span class="header-action-badge position-absolute d-inline-flex justify-content-center align-items-center text-light" data-cart-count>0</span>
         </button>
       </div>
 
-      <!-- Nội dung menu sẽ hiển thị khi nhấn vào icon -->
+      <!-- Menu truot cho mobile -->
       <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
         <div class="offcanvas-header border-bottom">
+          <h2 class="visually-hidden" id="mobileMenuLabel">Menu di động</h2>
           <img src="./assets/image/logo.png" alt="ĐH Công Thương" height="50" />
           <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
-        <!-- Phần danh sách sự kiện có thể thao tác -->
         <div class="offcanvas-body d-flex flex-column p-0">
           <ul class="nav flex-column fs-6">
-            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">ĐIỆN THOẠI</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">MÁY TÍNH BẢNG</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">LAPTOP</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">PHỤ KIỆN</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">LIÊN HỆ</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#">KHUYẾN MÃI</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#featured" data-filter-shortcut="phone">ĐIỆN THOẠI</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#featured" data-filter-shortcut="tablet">MÁY TÍNH BẢNG</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#featured" data-filter-shortcut="laptop">LAPTOP</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#featured" data-filter-shortcut="accessory">PHỤ KIỆN</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#home">LIÊN HỆ</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link text-dark py-3 px-4 fw-medium" href="#featured" data-filter-shortcut="all">KHUYẾN MÃI</a></li>
           </ul>
 
-          <!-- Mục giỏ hàng và yêu thích -->
           <div class="mt-2">
-            <a href="#" class="nav-link text-dark py-3 px-4 d-flex align-items-center gap-2 fw-medium"> <i class="bi bi-cart2 fs-5"></i> GIỎ HÀNG CỦA TÔI (0) </a>
-            <a href="#" class="nav-link text-dark py-2 px-4 d-flex align-items-center gap-2 fw-medium"> <i class="bi bi-heart fs-5"></i> YÊU THÍCH (0) </a>
+            <a href="#" class="nav-link text-dark py-3 px-4 d-flex align-items-center gap-2 fw-medium"><i class="bi bi-cart2 fs-5"></i> GIỎ HÀNG CỦA TÔI (<span data-cart-count>0</span>)</a>
+            <a href="#" class="nav-link text-dark py-2 px-4 d-flex align-items-center gap-2 fw-medium"><i class="bi bi-heart fs-5"></i> YÊU THÍCH (<span data-wishlist-count>0</span>)</a>
           </div>
 
-          <!--Đăng nhập-->
           <div class="mt-auto p-4 border-top bg-light">
             <button class="btn btn-dark w-100 py-2 d-flex align-items-center justify-content-center gap-2 rounded-3"><i class="bi bi-box-arrow-in-right"></i> Đăng nhập</button>
           </div>
@@ -154,12 +132,13 @@
       </div>
     </header>
 
+    <!-- Noi dung chinh -->
     <main>
-      <!-- Phần giới thiệu đầu trang -->
+      <!-- Khu vuc gioi thieu -->
       <section class="hero-section" id="home">
         <div class="container">
           <div class="row g-4 align-items-center">
-            <div class="col-lg-6" data-reveal>
+            <div class="col-lg-6 d-none d-lg-block" data-reveal>
               <span class="eyebrow">
                 <i class="bi bi-stars"></i>
                 Sống nhanh hơn cùng công nghệ tinh gọn
@@ -168,7 +147,7 @@
               <p class="hero-text">Từ điện thoại, tablet tới workstation và phụ kiện thông minh, mọi sản phẩm đều được tuyển chọn để cân bằng giữa hiệu năng, thẩm mỹ và độ bền sử dụng lâu dài</p>
               <div class="hero-actions">
                 <a href="#featured" class="text-decoration-none btn btn-accent btn-lg d-inline-flex justify-content-center align-items-center">Khám phá ngay</a>
-                <a href="#flash-deal" class="text-decoration-none btn btn-outline-dark btn-lg d-inline-flex justify-content-center align-items-center">Xem ưu đãi</a>
+                <a href="#featured" class="text-decoration-none btn btn-outline-dark btn-lg d-inline-flex justify-content-center align-items-center">Xem ưu đãi</a>
               </div>
 
               <div class="row g-3 stats-grid">
@@ -225,7 +204,7 @@
         </div>
       </section>
 
-      <!-- Countdown thời gian -->
+      <!-- Danh muc truy cap nhanh -->
       <section class="category-strip">
         <div class="container">
           <div class="category-shell">
@@ -239,7 +218,7 @@
             <a href="#featured" class="text-decoration-none category-pill" data-filter-shortcut="tablet">
               <span class="category-icon category-icon-orange"><i class="bi bi-tablet"></i></span>
               <span>
-                <strong>Máy tính bảng</strong>
+                <strong>Tablet</strong>
                 <small>Học tập, vẽ, ghi chú, giải trí</small>
               </span>
             </a>
@@ -261,18 +240,14 @@
         </div>
       </section>
 
-      <!-- Danh mục sản phẩm hot -->
+      <!-- Danh sach san pham -->
       <section class="section-space section-soft" id="featured">
         <div class="container">
-          <div class="section-heading d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3">
-            <div>
-              <span class="eyebrow">
-                <i class="bi bi-lightning-charge-fill"></i>
-                Chọn nhanh theo nhu cầu
-              </span>
-              <h2>Sản phẩm hot nhất tuần này</h2>
-              <p>Danh sách được tuyển từ nhóm thiết bị có tỷ lệ chốt đơn cao, cấu hình ổn và mức giá dễ xuống tiền.</p>
-            </div>
+          <span class="eyebrow mb-3">
+            <i class="bi bi-stars"></i>
+            Các thiết bị công nghệ tiên tiến
+          </span>
+          <div class="section-heading d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mw-100">
             <div class="filter-pills" role="tablist" aria-label="Lọc danh mục sản phẩm">
               <button class="btn active" type="button" data-filter="all">Tất cả</button>
               <button class="btn" type="button" data-filter="phone">Điện thoại</button>
@@ -281,16 +256,22 @@
               <button class="btn" type="button" data-filter="accessory">Phụ kiện</button>
             </div>
           </div>
-          <div class="drag-scroll product-track mt-4" id="featuredProducts" aria-live="polite"></div>
+
+          <div class="row g-4 mt-4" id="featuredProducts" aria-live="polite"></div>
         </div>
       </section>
 
+      <!-- Khuyến mãi -->
       <section class="section-space" id="flash-deal">
         <div class="container">
+          <span class="eyebrow mb-3">
+            <i class="bi bi-stars"></i>
+            Ưu đãi bất ngờ
+          </span>
           <div class="row g-4">
-            <div class="col-lg-5" data-reveal>
+            <div class="d-none d-lg-block col-lg-5" data-reveal>
               <div class="deal-panel">
-                <span class="eyebrow eyebrow-dark">
+                <span class="eyebrow eyebrow-dar text-light">
                   <i class="bi bi-fire"></i>
                   Flash deal đang chạy
                 </span>
@@ -332,25 +313,25 @@
                   <div class="col-md-6">
                     <div class="showcase-media">
                       <span class="showcase-badge">Giảm 18%</span>
-                      <img src="./assets/image/%C4%91i%C3%AA%CC%A3n%20thoa%CC%A3i%201.png" alt="Nova X Pro 15" />
+                      <img src="./assets/image/Iphone/iphone-17-pro-max-cam-cu_1759916325.png" alt="Nova X Pro 15" />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <span class="product-category">Flagship signature</span>
-                    <h3 class="showcase-title">Nova X Pro 15</h3>
-                    <p class="showcase-text">Màn hình OLED 120Hz, chip AI tối ưu camera và thời lượng pin bền để bạn quay, edit và làm việc cả ngày không bị ngắt nhịp.</p>
+                    <h3 class="showcase-title">iPhone 17 Pro Max Cam</h3>
+                    <p class="showcase-text">Sắc Cam Titanium nổi bật và cá tính. Màn hình cực đại 6.9" Super Retina XDR, sức mạnh vô song từ chip A19 Pro và hệ thống 3 camera 48MP chuyên nghiệp.</p>
                     <div class="showcase-specs">
-                      <span><i class="bi bi-cpu"></i> Chip AI thế hệ mới</span>
-                      <span><i class="bi bi-badge-8k"></i> Camera 50MP quay 4K</span>
-                      <span><i class="bi bi-battery-charging"></i> Sạc nhanh 80W</span>
+                      <span><i class="bi bi-cpu"></i> Chip Apple A19 Pro</span>
+                      <span><i class="bi bi-camera"></i> Hệ thống 3 Camera 48MP</span>
+                      <span><i class="bi bi-shield-check"></i> Khung Titanium siêu nhẹ</span>
                     </div>
                     <div class="showcase-price">
-                      <strong>$899</strong>
-                      <span>$1,099</span>
+                      <strong>$1099</strong>
+                      <span>$1299</span>
                     </div>
                     <div class="d-flex flex-wrap gap-3">
-                      <button class="btn btn-accent" type="button" data-add-cart="nova-x-pro-15">Thêm vào giỏ</button>
-                      <button class="btn btn-outline-dark" type="button" data-toggle-like="nova-x-pro-15">Lưu yêu thích</button>
+                      <button class="btn btn-accent" type="button" data-add-cart="iphone-17-pro-max-cam">Thêm vào giỏ</button>
+                      <button class="btn btn-outline-dark" type="button" data-toggle-like="iphone-17-pro-max-cam">Lưu yêu thích</button>
                     </div>
                   </div>
                 </div>
@@ -360,24 +341,31 @@
         </div>
       </section>
 
+      <!-- Chính sách từ cửa hành -->
       <section class="section-space section-muted">
         <div class="container">
-          <div class="row g-4">
-            <div class="col-md-4" data-reveal>
+          <span class="eyebrow mb-3">
+            <i class="bi bi-stars"></i>
+            Chính sách từ cửa hành
+          </span>
+          <div class="row g-3 g-lg-4 justify-content-center">
+            <div class="col-6 col-lg-4" data-reveal>
               <div class="service-card">
                 <div class="service-icon service-icon-blue"><i class="bi bi-truck"></i></div>
                 <h3>Giao nhanh có kiểm tra</h3>
                 <p>Ship nội thành thần tốc, nhận máy được kiểm tra ngoại quan và phụ kiện trước khi thanh toán.</p>
               </div>
             </div>
-            <div class="col-md-4" data-reveal>
+
+            <div class="col-6 col-lg-4" data-reveal>
               <div class="service-card">
                 <div class="service-icon service-icon-orange"><i class="bi bi-arrow-repeat"></i></div>
                 <h3>Thu cũ đổi mới linh hoạt</h3>
                 <p>Định giá nhanh, bù chênh lệch rõ ràng để lên đời thiết bị ít áp lực tài chính hơn.</p>
               </div>
             </div>
-            <div class="col-md-4" data-reveal>
+
+            <div class="col-12 col-lg-4" data-reveal>
               <div class="service-card">
                 <div class="service-icon service-icon-dark"><i class="bi bi-patch-check"></i></div>
                 <h3>Bảo hành chủ động</h3>
@@ -388,258 +376,57 @@
         </div>
       </section>
 
-      <section class="section-space" id="service">
+      <!-- Câu hỏi thường gặp -->
+      <section class="section-space section-soft shadow-sm" id="faq">
         <div class="container">
-          <div class="section-heading text-center mx-auto">
-            <span class="eyebrow justify-content-center">
-              <i class="bi bi-grid-1x2-fill"></i>
-              Không chỉ là sản phẩm
-            </span>
-            <h2>Một cửa hàng gọn gàng cho cả nhu cầu học, làm và chill</h2>
-            <p>NovaTech kết hợp chọn lọc danh mục, tư vấn cấu hình và hậu mãi để việc mua thiết bị không còn rối.</p>
-          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-10" data-reveal>
+              <div class="faq-wrapper bg-white rounded-4 shadow-sm p-4 p-md-5 border">
+                <h2 class="faq-title text-center text-uppercase fw-bold mb-4">CÂU HỎI THƯỜNG GẶP</h2>
 
-          <div class="row g-4 mt-2">
-            <div class="col-lg-8" data-reveal>
-              <div class="row g-4">
-                <div class="col-md-6">
-                  <div class="benefit-card">
-                    <span class="benefit-icon category-icon-blue"><i class="bi bi-phone-vibrate"></i></span>
-                    <h3>Tư vấn đúng bài toán</h3>
-                    <p>Chọn thiết bị theo nhu cầu thật: content creator, sinh viên, dân văn phòng, sale hay gaming.</p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="benefit-card">
-                    <span class="benefit-icon category-icon-orange"><i class="bi bi-palette2"></i></span>
-                    <h3>Thiết kế đẹp, trải nghiệm mượt</h3>
-                    <p>Ưu tiên những mẫu cân bằng tốt giữa hiệu năng, kiểu dáng và cảm giác sử dụng mỗi ngày.</p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="benefit-card">
-                    <span class="benefit-icon category-icon-green"><i class="bi bi-headset-vr"></i></span>
-                    <h3>Hệ sinh thái đồng bộ</h3>
-                    <p>Ghép thiết bị và phụ kiện theo combo hợp lý để học tập, làm việc và giải trí liền mạch hơn.</p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="benefit-card">
-                    <span class="benefit-icon category-icon-dark"><i class="bi bi-graph-up-arrow"></i></span>
-                    <h3>Giá trị sử dụng dài hạn</h3>
-                    <p>Gợi ý cấu hình không lỗi thời quá sớm, tối ưu để dùng bền, dễ bán lại và dễ nâng cấp.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4" data-reveal>
-              <div class="insight-card">
-                <span class="eyebrow">
-                  <i class="bi bi-bar-chart-line-fill"></i>
-                  Thông tin đáng chú ý
-                </span>
-                <h3>Khách đến NovaTech thường mua gì?</h3>
-                <div class="insight-list">
-                  <div class="insight-item">
-                    <span>Điện thoại flagship</span>
-                    <strong>43%</strong>
-                  </div>
-                  <div class="insight-item">
-                    <span>Laptop mỏng nhẹ</span>
-                    <strong>28%</strong>
-                  </div>
-                  <div class="insight-item">
-                    <span>Tablet học tập</span>
-                    <strong>17%</strong>
-                  </div>
-                  <div class="insight-item">
-                    <span>Phụ kiện thông minh</span>
-                    <strong>12%</strong>
-                  </div>
-                </div>
-                <a href="#arrivals" class="btn btn-dark w-100 mt-3">Xem bộ sưu tập mới</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Arrivals section start: luoi san pham moi, duoc JS render toi da 4 item -->
-      <section class="section-space section-soft" id="arrivals">
-        <div class="container">
-          <div class="section-heading d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3">
-            <div>
-              <span class="eyebrow">
-                <i class="bi bi-box-seam"></i>
-                Bộ sưu tập mới lên kệ
-              </span>
-              <h2>Gợi ý đáng cân nhắc nếu bạn muốn mua trong tháng này</h2>
-              <p>Nhóm sản phẩm được chọn để vừa đẹp giao diện, vừa có hiệu năng và giá trị sử dụng ổn trong tầm giá.</p>
-            </div>
-            <a href="#faq" class="text-link">
-              Cần tư vấn nhanh?
-              <i class="bi bi-arrow-up-right"></i>
-            </a>
-          </div>
-
-          <!-- Dynamic arrivals grid: JS se chen cac card vao day -->
-          <div class="row g-4 mt-2" id="latestProducts" aria-live="polite"></div>
-        </div>
-      </section>
-
-      <section class="section-space">
-        <div class="container">
-          <div class="row g-4 align-items-center">
-            <div class="col-lg-5" data-reveal>
-              <span class="eyebrow">
-                <i class="bi bi-people-fill"></i>
-                Khách hàng tin chọn
-              </span>
-              <h2 class="mb-3">Những thương hiệu và cộng đồng sáng tạo đang đồng hành</h2>
-              <p class="text-muted mb-4">
-                Dù là sinh viên mới build góc học tập, nhân sự văn phòng cần laptop gọn hay creator cần máy quay chụp ổn định, NovaTech đều hướng tới trải nghiệm rõ ràng và ít rủi ro.
-              </p>
-              <div class="brand-cloud">
-                <span class="brand-chip">Aether Studio</span>
-                <span class="brand-chip">Motive Lab</span>
-                <span class="brand-chip">Pixel Crew</span>
-                <span class="brand-chip">Sora Campus</span>
-                <span class="brand-chip">Next Office</span>
-                <span class="brand-chip">Halo Team</span>
-              </div>
-            </div>
-
-            <div class="col-lg-7" data-reveal>
-              <div class="row g-4">
-                <div class="col-md-6">
-                  <div class="testimonial-card">
-                    <div class="testimonial-head">
-                      <div class="avatar">AN</div>
-                      <div>
-                        <h3>An Nhiên</h3>
-                        <p>Content Creator</p>
+                <div class="accordion custom-faq-accordion" id="faqAccordion">
+                  <div class="accordion-item mb-3">
+                    <h3 class="accordion-header">
+                      <button class="accordion-button collapsed accordion" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="false" aria-controls="faqOne">
+                        iPhone bao nhiêu GB là đủ dùng?
+                      </button>
+                    </h3>
+                    <div id="faqOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        Dung lượng bộ nhớ phù hợp phụ thuộc vào nhu cầu sử dụng. Người dùng cơ bản chỉ lướt web, nhắn tin và chụp ảnh thông thường có thể đủ với 128GB. Người dùng chụp nhiều ảnh, video
+                        và cài nhiều ứng dụng nên chọn 256GB. Các nhà sáng tạo nội dung chuyên nghiệp nên chọn từ 512GB đến 1TB.
                       </div>
                     </div>
-                    <p class="mb-0">“Mình thích cách tư vấn ở đây vì không cố bán mẫu đắt nhất. Họ hỏi nhu cầu quay, edit, di chuyển rồi mới đề xuất máy và phụ kiện phù hợp.”</p>
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="testimonial-card">
-                    <div class="testimonial-head">
-                      <div class="avatar avatar-orange">TH</div>
-                      <div>
-                        <h3>Tuấn Hào</h3>
-                        <p>Product Designer</p>
+
+                  <div class="accordion-item mb-3">
+                    <h3 class="accordion-header">
+                      <button class="accordion-button collapsed accordion" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+                        Điện thoại iPhone VN/A là gì?
+                      </button>
+                    </h3>
+                    <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        iPhone VN/A là phiên bản chính hãng được Apple phân phối chính thức tại thị trường Việt Nam. Sản phẩm này được nhập khẩu trực tiếp, có đầy đủ tem nhãn phụ tiếng Việt, được bảo
+                        hành 12 tháng tại các trung tâm bảo hành ủy quyền của Apple tại Việt Nam và được cập nhật iOS phù hợp với thị trường Việt Nam.
                       </div>
                     </div>
-                    <p class="mb-0">“Combo laptop, màn hình và hub được set rất gọn. Nhận máy xong là mình vào việc luôn, không phải mua bổ sung lặt vặt quá nhiều.”</p>
                   </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="testimonial-card testimonial-highlight">
-                    <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center mb-3">
-                      <div>
-                        <span class="small text-uppercase fw-semibold text-body-secondary">Điểm hài lòng trung bình</span>
-                        <h3 class="mb-0">4.9/5 từ hơn 3,000 lượt đánh giá</h3>
-                      </div>
-                      <div class="rating-pill">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
+
+                  <div class="accordion-item mb-0">
+                    <h3 class="accordion-header">
+                      <button class="accordion-button collapsed accordion" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+                        iPhone có chống nước không?
+                      </button>
+                    </h3>
+                    <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        iPhone từ thế hệ 7 trở lên đều được chứng nhận chống nước ở các cấp độ khác nhau. iPhone 7/8 đạt chuẩn IP67 (ngâm sâu 1m trong 30 phút), iPhone XS đến iPhone 15 Pro Max đạt
+                        chuẩn IP68 (ngâm sâu 6m trong 30 phút). Tuy nhiên, Apple không bảo hành cho hư hỏng do chất lỏng gây ra, nên hãy cẩn thận khi sử dụng gần nước.
                       </div>
                     </div>
-                    <p class="mb-0">“Điểm cộng lớn nhất là quy trình mua hàng mạch lạc: tư vấn rõ, giá dễ hiểu, giao nhanh và hậu mãi không vòng vo.”</p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-space section-muted" id="faq">
-        <div class="container">
-          <div class="row g-4 align-items-start">
-            <div class="col-lg-7" data-reveal>
-              <div class="section-heading mb-4">
-                <span class="eyebrow">
-                  <i class="bi bi-question-circle-fill"></i>
-                  Câu hỏi thường gặp
-                </span>
-                <h2>Một vài điều khách hay hỏi trước khi chốt đơn</h2>
-                <p>Giải đáp nhanh để bạn yên tâm hơn trước khi chọn thiết bị phù hợp với ngân sách.</p>
-              </div>
-
-              <!-- Accordion start: moi button dieu khien 1 panel collapse bang data-bs-* -->
-              <div class="accordion custom-accordion" id="faqAccordion">
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
-                      NovaTech có hỗ trợ trả góp không?
-                    </button>
-                  </h3>
-                  <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">Có. Bạn có thể chọn trả góp qua thẻ tín dụng hoặc hồ sơ tài chính tùy chương trình áp dụng tại thời điểm mua hàng.</div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
-                      Nếu tôi chưa chắc cấu hình nào phù hợp thì sao?
-                    </button>
-                  </h3>
-                  <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                      Bạn chỉ cần mô tả nhu cầu chính như học tập, làm việc, chỉnh sửa ảnh/video hay chơi game. Đội ngũ sẽ gợi ý theo đúng bài toán thay vì đẩy bạn lên mức giá cao hơn cần thiết.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
-                      Có được kiểm tra hàng trước khi thanh toán không?
-                    </button>
-                  </h3>
-                  <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">Có với các đơn giao nội thành và theo chính sách từng khu vực. NovaTech ưu tiên trải nghiệm minh bạch để bạn yên tâm nhận máy.</div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
-                      Sau khi mua có hỗ trợ cài đặt hay chuyển dữ liệu không?
-                    </button>
-                  </h3>
-                  <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">Có. Tùy sản phẩm, bạn có thể được hỗ trợ kích hoạt máy, dán cơ bản, đăng nhập tài khoản và chuyển dữ liệu ban đầu.</div>
-                  </div>
-                </div>
-              </div>
-              <!-- Accordion end -->
-            </div>
-
-            <div class="col-lg-5" data-reveal>
-              <div class="newsletter-card">
-                <span class="eyebrow eyebrow-dark">
-                  <i class="bi bi-envelope-paper-fill"></i>
-                  Đăng ký ưu đãi
-                </span>
-                <h3>Nhận deal sớm hơn mọi người một nhịp</h3>
-                <p>Để lại email để nhận thông tin về đợt giảm giá, cấu hình đáng mua và những combo phụ kiện đang có lợi nhất.</p>
-                <!-- Newsletter form start: form demo, JS reset va hien toast khi submit -->
-                <form class="newsletter-form">
-                  <input type="email" class="form-control" placeholder="Email của bạn" aria-label="Email nhận ưu đãi" />
-                  <button class="btn btn-light" type="submit">Đăng ký</button>
-                </form>
-                <!-- Newsletter form end -->
-                <ul class="list-unstyled mb-0 mt-4 newsletter-list">
-                  <li><i class="bi bi-check-lg"></i> Không spam, chỉ gửi khi có tin đáng xem</li>
-                  <li><i class="bi bi-check-lg"></i> Ưu đãi thành viên và voucher sinh nhật</li>
-                  <li><i class="bi bi-check-lg"></i> Gợi ý cấu hình theo từng nhóm nhu cầu</li>
-                </ul>
               </div>
             </div>
           </div>
@@ -647,10 +434,69 @@
       </section>
     </main>
 
-    <!-- File js -->
-    <script src="./assets/js/scrip.js"></script>
+    <!-- Footer -->
+    <footer class="footer-modern py-5">
+      <div class="container">
+        <div class="row g-4 justify-content-between">
+          <div class="col-12 col-md-6 col-lg-5">
+            <div class="footer-contact-info">
+              <h3 class="footer-heading mb-4 text-gradient-orange">Liên Hệ Trung Tâm</h3>
+              <h4 class="h5 text-white mb-4 fw-bold">Trung tâm hỗ trợ sinh viên - HUIT</h4>
 
-    <!-- Bootstrap -->
+              <ul class="list-unstyled footer-contact-list">
+                <li class="d-flex align-items-start mb-3">
+                  <i class="bi bi-geo-alt-fill text-accent-blue me-3 mt-1"></i>
+                  <span><strong>Địa chỉ:</strong> 140 Lê Trọng Tấn, Q. Tân Phú, TP. HCM</span>
+                </li>
+                <li class="d-flex align-items-center mb-3">
+                  <i class="bi bi-envelope-fill text-accent-blue me-3"></i>
+                  <span><strong>Email:</strong> <a href="mailto:hotrosv@huit.edu.vn" class="text-decoration-none text-footer-link">hotrosv@huit.edu.vn</a></span>
+                </li>
+                <li class="d-flex align-items-center mb-4">
+                  <i class="bi bi-telephone-fill text-accent-blue me-3"></i>
+                  <span><strong>Hotline:</strong> <a href="tel:0909888777" class="text-decoration-none text-footer-link fw-bold text-orange">0909 888 777</a></span>
+                </li>
+              </ul>
+
+              <div class="footer-socials d-flex gap-2">
+                <a href="#" class="social-icon-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-icon-btn" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
+                <a href="#" class="social-icon-btn" aria-label="Tiktok"><i class="bi bi-tiktok"></i></a>
+                <a href="#" class="social-icon-btn" aria-label="Globe"><i class="bi bi-globe"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-6">
+            <div class="footer-map-wrapper">
+              <h3 class="footer-heading mb-4 text-gradient-orange">Vị Trí Bản Đồ</h3>
+              <div class="map-container shadow">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0673482314114!2d106.6237946776944!3d10.806153861869756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752be27d8b4f4d%3A0x92dcba2950430867!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBUaMawxqFuZyBUUC4gSOG7kyBDaMOtIE1pbmggKEhVSVQp!5e0!3m2!1svi!2s!4v1778957899889!5m2!1svi!2s"
+                  width="100%"
+                  height="220"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="footer-divider my-4" />
+
+        <div class="row">
+          <div class="col-12 text-center">
+            <p class="copyright-text mb-0 text-light">© 2026 Trung Tâm Hỗ Trợ Sinh Viên - HUIT. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="./assets/js/scrip.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

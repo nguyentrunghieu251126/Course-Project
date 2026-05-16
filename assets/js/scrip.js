@@ -1,138 +1,44 @@
-// Khởi động toàn bộ chức năng đang dùng trên trang
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", initPage);
+
+// Khởi động các chức năng đang được dùng trên trang.
+async function initPage() {
+  await fetchProducts();
+  state.visibleLimit = calculateItemsLimit();
+  initCountdown();
   initRevealObserver();
   initCounterObserver();
-  initToast();
   initSearchForms();
   initActionHandlers();
   initFilters();
   renderProducts();
-  initHorizontalScroll();
-  initCountdown();
-});
+}
 
-// Biến dùng chung để quản lý observer và toast.
 let revealObserver = null;
-let actionToast = null;
 let counterObserver = null;
 
-// Trạng thái hiện tại của bộ lọc, từ khóa tìm kiếm, giỏ hàng và yêu thích.
 const state = {
   activeFilter: "all",
   searchTerm: "",
   cartCount: 0,
   likedProducts: new Set(),
+  visibleLimit: 12,
 };
 
-// Dữ liệu sản phẩm để render ra khu "Sản phẩm hot" và "Bộ sưu tập mới".
-const products = [
-  {
-    id: "nova-x-pro-15",
-    name: "Nova X Pro 15",
-    category: "phone",
-    categoryLabel: "Điện thoại",
-    tag: "Best seller",
-    price: "899",
-    oldPrice: "1,099",
-    rating: "4.9",
-    highlight: "AI camera",
-    icon: "bi-phone",
-    description: "Flagship mỏng nhẹ, tối ưu quay chụp và đa nhiệm cho người dùng thích mọi thứ phải mượt.",
-  },
-  {
-    id: "flare-note-air",
-    name: "Flare Note Air",
-    category: "phone",
-    categoryLabel: "Điện thoại",
-    tag: "Pin trâu",
-    price: "659",
-    oldPrice: "799",
-    rating: "4.8",
-    highlight: "5,500mAh",
-    icon: "bi-phone-flip",
-    description: "Mẫu máy cân bằng giữa pin, màn hình sáng và hiệu năng ổn cho học tập, công việc lẫn giải trí.",
-  },
-  {
-    id: "sketch-tab-12",
-    name: "Sketch Tab 12",
-    category: "tablet",
-    categoryLabel: "Máy tính bảng",
-    tag: "Creator pick",
-    price: "699",
-    oldPrice: "829",
-    rating: "4.9",
-    highlight: "Bút cảm ứng",
-    icon: "bi-tablet",
-    description: "Tablet 12 inch phù hợp ghi chú, phác thảo, làm slide và xem nội dung với màu sắc dễ chịu.",
-  },
-  {
-    id: "nova-tab-mini",
-    name: "Nova Tab Mini",
-    category: "tablet",
-    categoryLabel: "Máy tính bảng",
-    tag: "Gọn nhẹ",
-    price: "459",
-    oldPrice: "549",
-    rating: "4.7",
-    highlight: "Travel ready",
-    icon: "bi-tablet-landscape",
-    description: "Thiết kế nhỏ gọn cho người hay di chuyển, đọc tài liệu, học online và giải trí trước khi ngủ.",
-  },
-  {
-    id: "aero-book-14",
-    name: "Aero Book 14",
-    category: "laptop",
-    categoryLabel: "Laptop",
-    tag: "Work smart",
-    price: "1,249",
-    oldPrice: "1,449",
-    rating: "4.9",
-    highlight: "1.3kg",
-    icon: "bi-laptop",
-    description: "Ultrabook cho dân văn phòng và designer cần thiết bị đẹp, nhẹ và vẫn đủ mạnh cho công việc hằng ngày.",
-  },
-  {
-    id: "forge-studio-16",
-    name: "Forge Studio 16",
-    category: "laptop",
-    categoryLabel: "Laptop",
-    tag: "Hiệu năng",
-    price: "1,799",
-    oldPrice: "2,099",
-    rating: "4.8",
-    highlight: "RTX ready",
-    icon: "bi-pc-display-horizontal",
-    description: "Workstation gọn cho người dựng video, làm 3D cơ bản hoặc cần mở nhiều phần mềm cùng lúc.",
-  },
-  {
-    id: "pulse-buds-pro",
-    name: "Pulse Buds Pro",
-    category: "accessory",
-    categoryLabel: "Phụ kiện",
-    tag: "Âm thanh",
-    price: "189",
-    oldPrice: "239",
-    rating: "4.8",
-    highlight: "ANC",
-    icon: "bi-earbuds",
-    description: "Tai nghe chống ồn chủ động, âm trường cân bằng và kết nối nhanh cho lối sống di động.",
-  },
-  {
-    id: "dock-hub-9in1",
-    name: "Dock Hub 9-in-1",
-    category: "accessory",
-    categoryLabel: "Phụ kiện",
-    tag: "Desk setup",
-    price: "119",
-    oldPrice: "149",
-    rating: "4.7",
-    highlight: "USB-C",
-    icon: "bi-usb-drive",
-    description: "Hub đa cổng cho góc làm việc gọn gàng hơn, đặc biệt hợp với laptop mỏng nhẹ và tablet.",
-  },
-];
+let products = [];
 
-// Tạo hiệu ứng hiện dần cho các khối có gắn data-reveal.
+async function fetchProducts() {
+  try {
+    const response = await fetch("../../assets/json/products.json");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    products = await response.json(); // Gán dữ liệu vào mảng products
+  } catch (error) {
+    console.error("Lỗi khi tải dữ liệu sản phẩm:", error);
+  }
+}
+
+// Tạo hiệu ứng hiện dần cho các phần tử có thuộc tính data-reveal.
 function initRevealObserver() {
   if (!("IntersectionObserver" in window)) {
     document.querySelectorAll("[data-reveal]").forEach((element) => {
@@ -159,7 +65,7 @@ function initRevealObserver() {
   observeRevealTargets(document);
 }
 
-// Gắn observer cho các phần tử cần animate.
+// Gắn observer vào các phần tử cần chạy hiệu ứng hiện dần.
 function observeRevealTargets(root) {
   const targets = root.querySelectorAll ? root.querySelectorAll("[data-reveal]") : [];
 
@@ -173,7 +79,7 @@ function observeRevealTargets(root) {
   });
 }
 
-// Theo dõi các con số ở hero để chạy hiệu ứng đếm khi nhìn thấy.
+// Theo dõi các số liệu trong hero để bắt đầu hiệu ứng đếm khi chúng xuất hiện.
 function initCounterObserver() {
   const counters = document.querySelectorAll("[data-counter]");
 
@@ -201,7 +107,7 @@ function initCounterObserver() {
   counters.forEach((counter) => counterObserver.observe(counter));
 }
 
-// Chạy hiệu ứng tăng số mượt từ 0 đến giá trị mục tiêu.
+// Chạy hiệu ứng tăng số từ 0 đến giá trị mục tiêu.
 function animateCounter(counter) {
   const target = Number(counter.dataset.counter || 0);
   const duration = 1400;
@@ -224,31 +130,7 @@ function animateCounter(counter) {
   requestAnimationFrame(update);
 }
 
-// Khởi tạo toast Bootstrap nếu sau này HTML có thêm khối toast.
-function initToast() {
-  const toastElement = document.getElementById("actionToast");
-
-  if (!toastElement || !window.bootstrap) return;
-
-  actionToast = new bootstrap.Toast(toastElement, {
-    delay: 2400,
-  });
-}
-
-// Cập nhật nội dung toast và hiển thị nếu toast tồn tại.
-function showToast(message) {
-  const toastMessage = document.getElementById("toastMessage");
-
-  if (toastMessage) {
-    toastMessage.textContent = message;
-  }
-
-  if (actionToast) {
-    actionToast.show();
-  }
-}
-
-// Xử lý form tìm kiếm và form đăng ký email.
+// Xử lý form tìm kiếm và render lại danh sách sản phẩm theo từ khóa.
 function initSearchForms() {
   document.querySelectorAll(".search-form").forEach((form) => {
     form.addEventListener("submit", (event) => {
@@ -258,6 +140,7 @@ function initSearchForms() {
       const query = input ? input.value.trim() : "";
 
       state.searchTerm = query.toLowerCase();
+      state.visibleLimit = calculateItemsLimit();
       syncSearchInputs(query);
       renderProducts();
 
@@ -265,35 +148,27 @@ function initSearchForms() {
         behavior: "smooth",
         block: "start",
       });
-
-      if (query) {
-        showToast(`Đang hiển thị kết quả cho "${query}".`);
-      } else {
-        showToast("Đã quay lại danh sách sản phẩm nổi bật.");
-      }
     });
-  });
-
-  const newsletterForm = document.querySelector(".newsletter-form");
-  if (!newsletterForm) return;
-
-  newsletterForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    newsletterForm.reset();
-    showToast("Đã ghi nhận email. Ưu đãi mới sẽ được gửi khi có đợt phù hợp.");
   });
 }
 
-// Đồng bộ giá trị giữa các ô tìm kiếm đang có trên trang.
+// Đồng bộ nội dung giữa các ô tìm kiếm nếu trang có nhiều form search.
 function syncSearchInputs(value) {
   document.querySelectorAll(".search-form input").forEach((input) => {
     input.value = value;
   });
 }
 
-// Bắt click cho các nút giỏ hàng, mua ngay và yêu thích.
+// Lắng nghe các nút thêm giỏ hàng, mua ngay, yêu thích và xem thêm
 function initActionHandlers() {
   document.addEventListener("click", (event) => {
+    const loadMoreBtn = event.target.closest("#loadMoreBtn");
+    if (loadMoreBtn) {
+      state.visibleLimit += calculateItemsLimit();
+      renderProducts();
+      return;
+    }
+
     const cartButton = event.target.closest("[data-add-cart]");
     if (cartButton) {
       handleAddToCart(cartButton.dataset.addCart || "");
@@ -313,45 +188,38 @@ function initActionHandlers() {
   });
 }
 
-// Thêm sản phẩm vào giỏ và cập nhật số lượng trong state.
+// Tăng số lượng giỏ hàng khi người dùng bấm nút thêm vào giỏ.
 function handleAddToCart(identifier) {
-  const product = resolveProduct(identifier);
-  const productName = product ? product.name : identifier;
+  if (!resolveProduct(identifier)) return;
 
   state.cartCount += 1;
   updateCountBadges();
-  showToast(`${productName} đã được thêm vào giỏ hàng.`);
 }
 
-// Mô phỏng hành động mua nhanh.
+// Tăng số lượng giỏ hàng khi người dùng bấm nút mua ngay.
 function handleBuyNow(identifier) {
-  const product = resolveProduct(identifier);
-  const productName = product ? product.name : identifier;
+  if (!resolveProduct(identifier)) return;
 
   state.cartCount += 1;
   updateCountBadges();
-  showToast(`Đã đưa ${productName} vào quy trình mua nhanh.`);
 }
 
-// Thêm hoặc bỏ sản phẩm khỏi danh sách yêu thích.
+// Bật hoặc tắt trạng thái yêu thích của một sản phẩm.
 function handleToggleLike(identifier) {
   const product = resolveProduct(identifier);
-  const productKey = product ? product.id : identifier;
-  const productName = product ? product.name : identifier;
+  if (!product) return;
 
-  if (state.likedProducts.has(productKey)) {
-    state.likedProducts.delete(productKey);
-    showToast(`Đã bỏ ${productName} khỏi danh sách yêu thích.`);
+  if (state.likedProducts.has(product.id)) {
+    state.likedProducts.delete(product.id);
   } else {
-    state.likedProducts.add(productKey);
-    showToast(`Đã lưu ${productName} vào danh sách yêu thích.`);
+    state.likedProducts.add(product.id);
   }
 
   updateCountBadges();
   syncWishlistButtons();
 }
 
-// Cập nhật số đếm nếu trong HTML có gắn data-cart-count hoặc data-wishlist-count.
+// Cập nhật các badge hiển thị số lượng giỏ hàng và yêu thích.
 function updateCountBadges() {
   document.querySelectorAll("[data-cart-count]").forEach((badge) => {
     badge.textContent = state.cartCount;
@@ -362,28 +230,29 @@ function updateCountBadges() {
   });
 }
 
-// Đồng bộ trạng thái trái tim giữa state và nút trên giao diện.
+// Đồng bộ trạng thái icon trái tim theo danh sách yêu thích hiện tại.
 function syncWishlistButtons() {
   document.querySelectorAll("[data-toggle-like]").forEach((button) => {
-    const identifier = button.dataset.toggleLike || "";
-    const product = resolveProduct(identifier);
-    const productKey = product ? product.id : identifier;
-    const isActive = state.likedProducts.has(productKey);
+    const product = resolveProduct(button.dataset.toggleLike || "");
+    if (!product) return;
+
+    const isActive = state.likedProducts.has(product.id);
+    const icon = button.querySelector("i");
 
     button.classList.toggle("is-active", isActive);
 
-    const icon = button.querySelector("i");
-    if (!icon) return;
-    icon.className = isActive ? "bi bi-heart-fill" : "bi bi-heart";
+    if (icon) {
+      icon.className = isActive ? "bi bi-heart-fill" : "bi bi-heart";
+    }
   });
 }
 
-// Tìm sản phẩm theo id hoặc tên.
+// Tìm sản phẩm trong mảng dữ liệu theo id.
 function resolveProduct(identifier) {
-  return products.find((product) => product.id === identifier || product.name === identifier) || null;
+  return products.find((product) => product.id === identifier) || null;
 }
 
-// Gắn sự kiện cho nút lọc danh mục và shortcut ở dải category.
+// Gắn sự kiện lọc sản phẩm cho nút filter và shortcut danh mục.
 function initFilters() {
   document.querySelectorAll("[data-filter]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -392,21 +261,51 @@ function initFilters() {
   });
 
   document.querySelectorAll("[data-filter-shortcut]").forEach((shortcut) => {
-    shortcut.addEventListener("click", () => {
-      const nextFilter = shortcut.dataset.filterShortcut || "all";
-      setFilter(nextFilter);
+    shortcut.addEventListener("click", (event) => {
+      event.preventDefault();
+      handleShortcutNavigation(shortcut);
     });
   });
 }
 
-// Đổi bộ lọc hiện tại và render lại danh sách sản phẩm.
+// Chuyển tới khu sản phẩm và bật bộ lọc tương ứng với mục menu vừa nhấn.
+function handleShortcutNavigation(shortcut) {
+  setFilter(shortcut.dataset.filterShortcut || "all");
+  scrollToAnchorTarget(shortcut.getAttribute("href"));
+  closeMobileMenu();
+}
+
+// Cuộn mượt tới section được khai báo trong thuộc tính href dạng hash.
+function scrollToAnchorTarget(targetSelector) {
+  if (!targetSelector || !targetSelector.startsWith("#")) return;
+
+  document.querySelector(targetSelector)?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}
+
+// Đóng offcanvas mobile sau khi người dùng chọn xong một mục điều hướng.
+function closeMobileMenu() {
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (!mobileMenu || !window.bootstrap) return;
+
+  const offcanvas = bootstrap.Offcanvas.getInstance(mobileMenu);
+  if (!offcanvas) return;
+
+  offcanvas.hide();
+}
+
+// Đổi bộ lọc hiện tại rồi render lại danh sách sản phẩm.
 function setFilter(filter) {
   state.activeFilter = filter;
+  state.visibleLimit = calculateItemsLimit();
   updateFilterButtons();
   renderProducts();
 }
 
-// Đánh dấu nút lọc nào đang được chọn.
+// Đánh dấu nút filter đang được chọn.
 function updateFilterButtons() {
   document.querySelectorAll("[data-filter]").forEach((button) => {
     const isActive = button.dataset.filter === state.activeFilter;
@@ -414,7 +313,7 @@ function updateFilterButtons() {
   });
 }
 
-// Lấy danh sách sản phẩm phù hợp theo bộ lọc và từ khóa tìm kiếm.
+// Lấy các sản phẩm phù hợp với bộ lọc và từ khóa tìm kiếm hiện tại.
 function getVisibleProducts() {
   return products.filter((product) => {
     const matchFilter = state.activeFilter === "all" || product.category === state.activeFilter;
@@ -428,60 +327,49 @@ function getVisibleProducts() {
   });
 }
 
-// Render danh sách sản phẩm cho 2 khu featured và arrivals.
+// Render danh sách sản phẩm nổi bật ra khu vực featuredProducts.
 function renderProducts() {
   const featuredContainer = document.getElementById("featuredProducts");
-  const latestContainer = document.getElementById("latestProducts");
+  if (!featuredContainer) return;
+
   const visibleProducts = getVisibleProducts();
 
-  if (!featuredContainer || !latestContainer) return;
-
   if (!visibleProducts.length) {
-    const emptyState = buildEmptyState();
-    featuredContainer.innerHTML = emptyState;
-    latestContainer.innerHTML = `<div class="col-12">${emptyState}</div>`;
+    featuredContainer.innerHTML = `<div class="col-12">${buildEmptyState()}</div>`;
     observeRevealTargets(featuredContainer);
-    observeRevealTargets(latestContainer);
     return;
   }
 
-  featuredContainer.innerHTML = visibleProducts.map((product) => buildProductCard(product, false)).join("");
-  latestContainer.innerHTML = buildLatestProducts(visibleProducts)
-    .map((product) => buildProductCard(product, true))
-    .join("");
+  const currentProducts = visibleProducts.slice(0, state.visibleLimit);
+
+  featuredContainer.innerHTML = currentProducts.map((product) => buildProductCard(product)).join("");
+
+  if (visibleProducts.length > state.visibleLimit) {
+    const loadMoreHTML = `
+      <div class="col-12 d-flex justify-content-center mt-5 mb-2" id="loadMoreContainer">
+        <button id="loadMoreBtn" class="btn btn-outline-dark px-5 py-2 fw-bold" style="border-width: 2px;" type="button">
+          Xem thêm <i class="bi bi-chevron-down ms-1"></i>
+        </button>
+      </div>
+    `;
+    featuredContainer.insertAdjacentHTML("beforeend", loadMoreHTML);
+  }
 
   observeRevealTargets(featuredContainer);
-  observeRevealTargets(latestContainer);
   syncWishlistButtons();
   updateCountBadges();
 }
 
-// Giới hạn khu arrivals tối đa 4 sản phẩm, thiếu thì bù từ danh sách gốc.
-function buildLatestProducts(visibleProducts) {
-  const selection = [...visibleProducts.slice(0, 4)];
-
-  if (selection.length === 4) return selection;
-
-  const selectedIds = new Set(selection.map((product) => product.id));
-
-  products.forEach((product) => {
-    if (selection.length === 4 || selectedIds.has(product.id)) return;
-
-    selection.push(product);
-    selectedIds.add(product.id);
-  });
-
-  return selection;
-}
-
-// Tạo HTML cho từng card sản phẩm.
-function buildProductCard(product, isGrid) {
+// Tạo HTML cho một card sản phẩm.
+function buildProductCard(product) {
   const liked = state.likedProducts.has(product.id);
-  const wrapperClass = isGrid ? "col-sm-6 col-xl-3" : "product-item";
+  const visualContent = product.image
+    ? `<img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: contain; position: relative; z-index: 1;">`
+    : `<i class="bi ${product.icon}"></i>`;
 
   return `
-    <div class="${wrapperClass}">
-      <article class="product-card" data-reveal>
+    <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
+      <article class="product-card w-100" data-reveal>
         <div class="product-card-top">
           <span class="product-badge">${product.tag}</span>
           <button class="icon-button ${liked ? "is-active" : ""}" type="button" data-toggle-like="${product.id}" aria-label="Lưu ${product.name}">
@@ -490,12 +378,13 @@ function buildProductCard(product, isGrid) {
         </div>
 
         <div class="product-visual product-visual--${product.category}">
-          <i class="bi ${product.icon}"></i>
+          ${visualContent}
         </div>
 
         <span class="product-category">${product.categoryLabel}</span>
-        <h3 class="product-name">${product.name}</h3>
-        <p class="product-desc">${product.description}</p>
+        
+        <h3 class="product-name" title="${product.name}">${product.name}</h3>
+        <p class="product-desc" title="${product.description}">${product.description}</p>
 
         <div class="product-meta">
           <span><i class="bi bi-star-fill"></i> ${product.rating}</span>
@@ -518,64 +407,26 @@ function buildProductCard(product, isGrid) {
   `;
 }
 
-// Tạo giao diện khi không có sản phẩm nào phù hợp với bộ lọc.
 function buildEmptyState() {
   return `
-    <div class="product-card text-center" data-reveal>
-      <div class="product-visual product-visual--accessory">
+    <div class="product-card text-center w-100" data-reveal>
+      <div class="product-visual product-visual--accessory mx-auto" style="max-width: 150px; min-height: 150px;">
         <i class="bi bi-search"></i>
       </div>
       <h3 class="product-name mb-2">Chưa có kết quả phù hợp</h3>
       <p class="product-desc mb-0">
-        Hãy thử từ khóa khác hoặc quay lại bộ lọc "Tất cả" để xem thêm sản phẩm nổi bật.
+        Hãy thử từ khóa khác hoặc quay lại bộ lọc "Tất cả" để xem thêm các sản phẩm khác.
       </p>
     </div>
   `;
 }
 
-// Cho phép kéo ngang danh sách featured bằng chuột hoặc touchpad.
-function initHorizontalScroll() {
-  document.querySelectorAll(".drag-scroll").forEach((track) => {
-    let pointerDown = false;
-    let startX = 0;
-    let startScrollLeft = 0;
-
-    track.addEventListener(
-      "wheel",
-      (event) => {
-        if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
-
-        event.preventDefault();
-        track.scrollBy({
-          left: event.deltaY,
-          behavior: "smooth",
-        });
-      },
-      { passive: false },
-    );
-
-    track.addEventListener("pointerdown", (event) => {
-      pointerDown = true;
-      startX = event.clientX;
-      startScrollLeft = track.scrollLeft;
-      track.classList.add("is-dragging");
-    });
-
-    track.addEventListener("pointermove", (event) => {
-      if (!pointerDown) return;
-      const distance = event.clientX - startX;
-      track.scrollLeft = startScrollLeft - distance;
-    });
-
-    const stopDrag = () => {
-      pointerDown = false;
-      track.classList.remove("is-dragging");
-    };
-
-    track.addEventListener("pointerup", stopDrag);
-    track.addEventListener("pointerleave", stopDrag);
-    track.addEventListener("pointercancel", stopDrag);
-  });
+// Hàm tính toán số lượng sản phẩm cho 3 hàng dựa trên kích thước màn hình
+function calculateItemsLimit() {
+  const width = window.innerWidth;
+  if (width >= 992) return 12;
+  if (width >= 768) return 9;
+  return 6;
 }
 
 // Cập nhật đồng hồ đếm ngược ở khu flash deal mỗi giây.
